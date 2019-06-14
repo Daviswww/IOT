@@ -10,6 +10,7 @@ else
 	$a = $_GET['a'];
 	$b = $_GET['b'];
 	$c = $_GET['c'];
+	$d = $_GET['d'];
 	$get = new dbcontrol();
-	$get->getINSdata($a ,$b ,$c);
+	$get->getINSdata($a ,$b ,$c, $d);
 }

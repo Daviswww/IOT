@@ -34,6 +34,7 @@
           <li><a href="page/insert.php">INSERT</a></li>
           <li><a href="page/select.php">SELECT</a></li>
           <li><a href="page/publish.php">PUBLISH</a></li>
+          <li><a href="page/subscribe.php">SUBSCRIBE</a></li>
       </ul>
       </aside>
       <div class="ininder">

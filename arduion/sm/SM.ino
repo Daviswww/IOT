@@ -15,8 +15,8 @@ String url = "/DB/script/ins.php?";
 const char* host = "140.126.21.185";  //傳送IP
 const uint16_t port = 80;
 //-----------setup---------
-WiFiClient espClient;
-PubSubClient client(espClient);
+WiFiClient client;
+
  
 void callback(char*topic, byte* payload, unsigned int length) {
   for (int i = 0; i< length; i++) {
@@ -53,20 +53,6 @@ void setup() {
   client.setCallback(callback);
   client.subscribe(topic);
   client.publish("qq","OK!");
-  //---------setWifi----------
-  //daviswww
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, password);
-
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.println("WiFi connected");
-  Serial.println("IP address: ");
-  Serial.println(WiFi.localIP());
-  //---------setWifi----------
 } 
  
 void loop() 
@@ -103,7 +89,13 @@ void loop()
         client.publish("m1/sh",topic_soil_humidity);
         client.publish("m1/ah",topic_air_humidity);
         client.publish("m1/tp",topic_temperature);
-
+        data += "a=";
+        data += a[1];
+        data += "&b=";
+        data += a[2];
+        data += "&c=";
+        data += a[3];  
+        client.print(String("GET ") + url + data + " HTTP/1.1\r\n" + "Host: " + host + "\r\n"+"Connection: close\r\n\r\n"); 
       }
       else if(a[0]==0x41)
       {                                       
@@ -120,14 +112,4 @@ void loop()
     }
     delay(2); 
   }   
-  //--------sqldata--------
-  //daviswww
-  data += "a=";
-  data += a[1];
-  data += "&b=";
-  data += a[2];
-  data += "&c=";
-  data += a[3];   
-  client.print(String("GET ") + url + data + " HTTP/1.1\r\n" + "Host: " + host + "\r\n"+"Connection: close\r\n\r\n");
-  //--------sqldata--------
 }

@@ -1,8 +1,10 @@
 <?php
     session_start();
+    $_SESSION["msg"] .= '';
+    $_SESSION["sub"] = '';
+    $_SESSION["count"] = 0; 
     include '../includes/dbControl.inc.php';
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -14,6 +16,10 @@
     <!---<link rel="stylesheet" href="resetstyle.css">--->
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="../js/jq.js">
+    
+    </script>
   </head>
   <body>
   	<nav class="nav-main">
@@ -37,18 +43,19 @@
     </aside>
     <div class="ininder">
       <h1>SUBSCRIBE</h1><br>
-      <form action = "../script/sub.php" method="GET">
+      <form action = "subscribe.php" method="GET">
         	MSG:
-            <input type="text" name="msg"><br>
+            <input type="text" name="getmsg" value="123"><br>
         	<button class="button" type="submit" name = "submit" ><span>PUBLISH</span></button>
       </form>
-      <h1>MSG</h1><br>
       <?php
-        if(isset($_SESSION["check"]))
-        {
-          echo "Subscribe: ". $_SESSION["msg"] ."<br>";
-        }
+        //$_SESSION["sub"] = $_GET['getmsg'];
       ?>
+      <h1>MSG</h1><br>
+      <div id = "qwe123">
+
+      <div>
     </div>
+  </div>
     </body>
   </html>

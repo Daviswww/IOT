@@ -54,5 +54,6 @@
         $show->showALLdata();
       ?>
     </div>
+    </div>
     </body>
   </html>

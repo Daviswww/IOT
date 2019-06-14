@@ -164,38 +164,40 @@ class phpMQTT {
 	}
 
 	/* read: reads in so many bytes */
-	function read($int = 8192, $nb = false){
-
+	function read($int = 8192, $nb = false)
+	{
 		//	print_r(socket_get_status($this->socket));
 		
 		$string="";
 		$togo = $int;
 		
-		if($nb){
+		if($nb)
+		{
 			return fread($this->socket, $togo);
 		}
 			
-		while (!feof($this->socket) && $togo>0) {
+		while (!feof($this->socket) && $togo>0) 
+		{
 			$fread = fread($this->socket, $togo);
 			$string .= $fread;
 			$togo = $int - strlen($string);
 		}
 		
-	
 		
-		
-			return $string;
+		return $string;
 	}
 
 	/* subscribe: subscribes to topics */
-	function subscribe($topics, $qos = 0){
+	function subscribe($topics, $qos = 0)
+	{
 		$i = 0;
 		$buffer = "";
 		$id = $this->msgid;
 		$buffer .= chr($id >> 8);  $i++;
 		$buffer .= chr($id % 256);  $i++;
 
-		foreach($topics as $key => $topic){
+		foreach($topics as $key => $topic)
+		{
 			$buffer .= $this->strwritestring($key,$i);
 			$buffer .= chr($topic["qos"]);  $i++;
 			$this->topics[$key] = $topic; 
@@ -297,15 +299,17 @@ class phpMQTT {
 
 	/* proc: the processing loop for an "allways on" client 
 		set true when you are doing other stuff in the loop good for watching something else at the same time */	
-	function proc( $loop = true){
-
-		if(1){
+	function proc($loop = true)
+	{
+		if(1)
+		{
 			$sockets = array($this->socket);
 			$w = $e = NULL;
 			$cmd = 0;
 			
-				//$byte = fgetc($this->socket);
-			if(feof($this->socket)){
+			//$byte = fgetc($this->socket);
+			if(feof($this->socket))
+			{
 				if($this->debug) echo "eof receive going to reconnect for good measure\n";
 				fclose($this->socket);
 				$this->connect_auto(false);
@@ -315,31 +319,36 @@ class phpMQTT {
 			
 			$byte = $this->read(1, true);
 			
-			if(!strlen($byte)){
-				if($loop){
-					usleep(100000);
-				}
-			 
-			}else{ 
-			
+			if(!strlen($byte))
+			{
+				if($loop)
+				{
+					usleep(3000);
+				}		 
+			}
+			else
+			{ 
 				$cmd = (int)(ord($byte)/16);
 				if($this->debug) echo "Recevid: $cmd\n";
 
 				$multiplier = 1; 
 				$value = 0;
-				do{
+				do
+				{
 					$digit = ord($this->read(1));
 					$value += ($digit & 127) * $multiplier; 
 					$multiplier *= 128;
-					}while (($digit & 128) != 0);
+				}while (($digit & 128) != 0);
 
 				if($this->debug) echo "Fetching: $value\n";
 				
 				if($value)
 					$string = $this->read($value);
 				
-				if($cmd){
-					switch($cmd){
+				if($cmd)
+				{
+					switch($cmd)
+					{
 						case 3:
 							$this->message($string);
 						break;
@@ -349,13 +358,15 @@ class phpMQTT {
 				}
 			}
 
-			if($this->timesinceping < (time() - $this->keepalive )){
+			if($this->timesinceping < (time() - $this->keepalive ))
+			{
 				if($this->debug) echo "not found something so ping\n";
 				$this->ping();	
 			}
 			
 
-			if($this->timesinceping<(time()-($this->keepalive*2))){
+			if($this->timesinceping<(time()-($this->keepalive*2)))
+			{
 				if($this->debug) echo "not seen a package in a while, disconnecting\n";
 				fclose($this->socket);
 				$this->connect_auto(false);

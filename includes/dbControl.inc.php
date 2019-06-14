@@ -17,12 +17,14 @@ class Dbcontrol extends Dbh
             return $data;
         }
 	}
-    public function getINSdata($a ,$b, $c)
+	
+    public function getINSdata($msg)
     {
-		$sql = "INSERT INTO farmer1(soil_humidity, air_humidity, temperature) VALUES($a, $b, $c)";
+		$sql = "INSERT INTO farmer1(sen, soil_humidity, air_humidity, temperature) VALUES($msg)";
 		$result = $this->connect()->query($sql);
-		header ("Location: ../page/insert.php?insert=done");
+		//header ("Location: ../page/insert.php?insert=done");
 	}
+
     public function getUDPdata($a ,$b, $c)
     {
 		if(!empty($cost))

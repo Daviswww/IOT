@@ -30,7 +30,9 @@ table tr td{
 	flex-wrap: wrap;
 	z-index: 3000;  
 }
-
+.nav-main ul li a:hover{
+    color: red;
+}
 .btn-toggle-nav {
 	width: 60px;
 	height: auto;

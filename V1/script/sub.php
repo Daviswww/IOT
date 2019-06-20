@@ -23,8 +23,4 @@ else
 	//$fp= popen("nohup php shell.php > /dev/null &",'w');
 	//pclose($fp);
 	echo "OK".date("Y-m-d H:i:s");
-	
-	//header ("Location: ../page/subscribe.php?subscribe=done");
-	//echo "<script src =\"../js/jq.js\"></script>";
-	//header('../page/subscribe.php'.$_SERVER['HTTP_REFERER']);
 }

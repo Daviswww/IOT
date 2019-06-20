@@ -48,12 +48,8 @@
             <input type="text" name="getmsg" value="123"><br>
         	<button class="button" type="submit" name = "submit" ><span>PUBLISH</span></button>
       </form>
-      <?php
-        //$_SESSION["sub"] = $_GET['getmsg'];
-      ?>
       <h1>MSG</h1><br>
       <div id = "qwe123">
-
       <div>
     </div>
   </div>

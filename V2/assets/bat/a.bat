@@ -1,0 +1,1 @@
+D:\xampp\php\php.exe D:\XAMPP\htdocs\SET\script\subscribe.php

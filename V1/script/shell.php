@@ -1,5 +1,5 @@
 <?php
 
-include 'D:/XAMPP/htdocs/IOT/includes/mqttControl.inc.php';
-$mqtt = new mqttControl();
+include 'D:/XAMPP/htdocs/IOT/V1/includes/mqttControl.inc.php';
+$mqtt = new MqttControl();
 $mqtt->subscribe();

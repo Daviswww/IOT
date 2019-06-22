@@ -4,7 +4,7 @@ $(function(){
     setInterval(function(){ showDisplay(); } ,100);
     function showDisplay()
     {
-        var url = "../script/test.php";
+        var url = "";
         var data = {'type':1};
         $.ajax({
         type : "POST",

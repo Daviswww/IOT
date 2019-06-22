@@ -1,6 +1,6 @@
 <?php
 include 'dbGet.php';
-include '../includes/mqtt.inc.php';
+include 'D:/XAMPP/htdocs/IOT/V2/includes/mqtt.inc.php';
 class Mqttget extends Mqtt
 {
     public function publish($msg)
@@ -31,8 +31,10 @@ class Mqttget extends Mqtt
         $mqtt->close();
     }
 }
+
 function procmsg($topic, $msg)
 {   
     $conn = new Dbget();
     $conn->getINSdata($msg);
+    //echo $msg . "<br>";
 }

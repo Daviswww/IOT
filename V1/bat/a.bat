@@ -1,1 +1,1 @@
-D:\xampp\php\php.exe D:\XAMPP\htdocs\IOT\script\shell.php
+D:\xampp\php\php.exe D:\XAMPP\htdocs\IOT\V1\script\shell.php

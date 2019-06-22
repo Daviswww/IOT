@@ -1,5 +1,5 @@
 <?php
-include '../includes/dbh.inc.php';
+include 'D:/XAMPP/htdocs/IOT/V2/includes/dbh.inc.php';
 
 class Dbget extends Dbh
 {
@@ -20,9 +20,9 @@ class Dbget extends Dbh
 	
     public function getINSdata($msg)
     {
-		$sql = "INSERT INTO farmer1(sen, soil_humidity, air_humidity, temperature) VALUES($msg)";
+		$sql = "INSERT INTO farmer1(sen, soil_humidity, air_humidity, temperature, rainfall, illumination) VALUES($msg)";
 		$result = $this->connect()->query($sql);
-		header ("Location: ../page/insert.php?insert=done");
+		//header ("Location: ../page/insert.php?insert=done");
 	}
 
     public function getUDPdata($a ,$b, $c)
@@ -57,4 +57,13 @@ class Dbget extends Dbh
 		header ("Location: ../page/delete.php?delete=done");
 	}
 
+	public function getLASTdata(){
+		$sql = 'SELECT * FROM farmer1 ORDER BY id DESC LIMIT 1';
+		$result = $this->connect()->query($sql);
+
+		while($row = $result->fetch_assoc()){
+			return $row;
+		}
+		
+	}
 }

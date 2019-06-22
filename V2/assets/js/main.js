@@ -1,10 +1,10 @@
-var counter = 0;
+var count = 0;
 
 $(function(){
-    setInterval(function(){ showDisplay(); } ,100);
+    setInterval(function(){ showDisplay(); } ,1000);
     function showDisplay()
     {
-        var url = "";
+        var url = "../module/dbLast.php";
         var data = {'type':1};
         $.ajax({
         type : "POST",
@@ -14,20 +14,30 @@ $(function(){
         timeout: 1000,
         success:function(msg)
         {
-            //alert('in success ' + msg);
-            //$("#qwe123").html('data');//要刷新的div
+            //update
+            $("#air_humidity").load('../module/dbLast.php',{
+                opcount : count++
+            });
+            $("#soil_humidity").load('../module/dbLast.php',{
+                opcount : count++
+            });
+            $("#temperature").load('../module/dbLast.php',{
+                opcount : count++
+            });
+            $("#rainfall").load('../module/dbLast.php',{
+                opcount : count++
+            });
+            $("#illumination").load('../module/dbLast.php',{
+                opcount : count++
+            });
+            count %= 5;
         },
         error: function() 
         {
             //alert('in error');
-            //alert("失败，请稍后再试！");
+            $("#air_humidity").html('error');//要刷新的div
         },
-        complete:function()
-        {
-            //alert('in complete');
-            $('#qwe123').load('../script/sub.php');
-        }
-    
         });
     }
 });
+

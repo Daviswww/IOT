@@ -1,1 +1,1 @@
-D:\xampp\php\php.exe D:\XAMPP\htdocs\SET\script\subscribe.php
+D:\xampp\php\php.exe D:\XAMPP\htdocs\IOT\V2\control\mqttSub.php

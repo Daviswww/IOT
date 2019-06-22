@@ -14,7 +14,7 @@ recognition.onresult = function(event){
 
     const transcript = event.results[current][0].transcript;
     content.textContent = transcript;
-    window.location.href = 'https://140.126.21.185/SET/control/pubControl.php?&msg=' + transcript;
+    window.location.href = 'https://192.168.1.6/IOT/V2/control/pubControl.php?&msg=' + transcript;
     //console.log(transcript);
     readOutLoud(transcript);
 };

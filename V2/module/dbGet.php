@@ -63,7 +63,13 @@ class Dbget extends Dbh
 
 		while($row = $result->fetch_assoc()){
 			return $row;
-		}
-		
+		}	
+	}
+	public function getLAdata(){
+		$sql = 'SELECT * FROM farmer1 ORDER BY id DESC LIMIT 7';
+		$result = $this->connect()->query($sql);
+		while($row = $result->fetch_assoc()){
+			return $row;
+		}	
 	}
 }

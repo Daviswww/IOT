@@ -1,11 +1,18 @@
 <?php
 include '../module/mqttGet.php';
-$msg = $_GET['msg'];
-if($msg == 'open'){
-    $msg = 'q';
-}elseif($msg == 'close'){
-    $msg = 'Q';
+if(empty($_GET['msg']))
+{
+    header("Location: ../view/publish.php?msg=done");
 }
-$mqtt = new Mqttget();
-$mqtt->publish($msg);
-header("Location: ../view/publish.php");
+else
+{
+    $msg = $_GET['msg'];
+    if($msg == '開燈'){
+        $msg = 'q';
+    }elseif($msg == '關燈'){
+        $msg = 'Q';
+    }
+    $mqtt = new Mqttget();
+    $mqtt->publish($msg);
+    header("Location: ../view/publish.php?msg=".$msg);
+}

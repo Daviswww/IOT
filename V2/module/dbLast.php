@@ -3,6 +3,9 @@ include 'dbGet.php';
 $op = $_POST['opcount'];
 $get = new Dbget();
 $last = $get->getLASTdata();
+$fp = fopen('data.json', 'w');
+fwrite($fp, json_encode($last));
+fclose($fp);
 
 if($op == 0){
     echo "air_humidity: ".$last['air_humidity'];

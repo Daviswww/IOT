@@ -22,6 +22,7 @@ class Mqttget extends Mqtt
         }
 
         $topics['ma'] = array("qos" => 0, "function" => "procmsg");
+        $topics['mc'] = array("qos" => 0, "function" => "procmsg");
         $mqtt->subscribe($topics, 0);
         
         while($mqtt->proc()){
@@ -34,7 +35,10 @@ class Mqttget extends Mqtt
 
 function procmsg($topic, $msg)
 {   
-    $conn = new Dbget();
-    $conn->getINSdata($msg);
+    if($topic == 'ma')
+    {
+        $conn = new Dbget();
+        $conn->getINSdata($msg);        
+    }
     //echo $msg . "<br>";
 }

@@ -59,6 +59,17 @@ table tr td{
 	list-style: none;
 	line-height: 60px;
 }
+.nav-main ul li #sidebar{
+	cursor: pointer;
+	width: 64px;
+	height: 64px;
+	background-image:url('https://img.icons8.com/material/64/000000/cloud-connection.png');
+	background-repeat:no-repeat;
+}
+
+.nav-main ul li #sidebar:hover{
+	background-image:url('https://img.icons8.com/material-outlined/64/000000/cloud-connection.png');
+}
 
 .nav-main ul li a{
 	display: block;
@@ -76,6 +87,7 @@ table tr td{
 	right:80px; 
 }
 .userid ul li{
+
 	margin-left:30px;
 	font-size:16px;
 	font-family: Arial, Helvetica, sans-serif;
@@ -84,6 +96,45 @@ table tr td{
 }
 
 .userid ul li a{
+
 	background-color: aqua;
 }
 
+
+.side-nav{
+	font-family: Arial, Helvetica, sans-serif;
+	height: 100%;
+	width: 0;
+	position: fixed;
+	top: 60px;
+	background-color: #111;
+	z-index: 5000;
+	opacity: 0.9;
+	overflow: hidden;
+	line-height: 80px;
+	transition: 0.5s;
+}
+.side-nav span{
+	padding-left: 50px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 22px;
+	color: rgb(0, 238, 255);
+	display: block;
+	text-align: left;
+}
+.side-nav a{
+	padding-left: 50px;
+	text-decoration: none;
+	font-size: 22px;
+	color: #ccc;
+	display: block;
+	text-align: left;
+	transition: 0.3s;
+}
+
+.side-nav a:hover{
+	opacity: 1;
+	background: #000000;
+	color: red;
+}

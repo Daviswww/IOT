@@ -3,24 +3,24 @@ include 'dbGet.php';
 $op = $_POST['opcount'];
 $get = new Dbget();
 $last = $get->getLASTdata();
-$fp = fopen('data.json', 'w');
+$fp = fopen('../database/data.json', 'w');
 fwrite($fp, json_encode($last));
 fclose($fp);
 
 if($op == 0){
-    echo "air_humidity: ".$last['air_humidity'];
+    echo $last['air_humidity'] ."%";
 }
 elseif($op == 1){
-    echo "soil_humidity: ".$last['soil_humidity'];
+    echo $last['soil_humidity'] ."%";
 }
 elseif($op == 2){
-    echo "temperature: ".$last['temperature'];
+    echo $last['temperature']."℃";
 }
 elseif($op == 3){
-    echo "rainfall: ".$last['rainfall'];
+    echo $last['rainfall']."mm";
 }
 elseif($op == 4){
-    echo "illumination: ".$last['illumination'];
+    echo $last['illumination']."lux";
 }
 
 

@@ -35,7 +35,11 @@ $(function(){
         error: function() 
         {
             //alert('in error');
-            $("#air_humidity").html('error');//要刷新的div
+            $("#air_humidity").html('error');
+            $("#soil_humidity").html('error');
+            $("#temperature").html('error');
+            $("#rainfall").html('error');
+            $("#illumination").html('error');
         },
         });
     }

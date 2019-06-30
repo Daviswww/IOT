@@ -20,6 +20,7 @@ if(empty($_COOKIE['uid'])){
   	  <ul>
         <li><a href="home.php">IOT</a></li>
         <li><a href="publish.php">publish</a></li>
+        <li><a href="switch.php">switch</a></li>
         <li><a href="select.php">select</a></li>
       <div class="userid">
         <ul >

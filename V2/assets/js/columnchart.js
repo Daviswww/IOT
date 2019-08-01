@@ -5,7 +5,7 @@ function drawBasic() {
 
       var data = new google.visualization.DataTable();
       data.addColumn('timeofday', 'Time of Day');
-      data.addColumn('number', 'Motivation Level');
+      data.addColumn('number', '123');
 
       data.addRows([
         [{v: [8, 0, 0], f: '8 am'}, 1],
@@ -17,7 +17,7 @@ function drawBasic() {
         [{v: [14, 0, 0], f: '2 pm'}, 7],
         [{v: [15, 0, 0], f: '3 pm'}, 8],
         [{v: [16, 0, 0], f: '4 pm'}, 9],
-        [{v: [17, 0, 0], f: '5 pm'}, 10],
+        [{v: [17, 0, 0], f: '5 pm'}, 5],
       ]);
 
       var options = {

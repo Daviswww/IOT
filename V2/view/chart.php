@@ -40,15 +40,12 @@ if(empty($_COOKIE['uid'])){
           <span>LIST</span>
           <li><a href="#">Community</a></li>
           <li><a href="#">Community</a></li>
-          <li><a href="#">Community</a></li>
+          <li><a href="#">Add</a></li>
       </ul>
     </div>
     <div class="inside">
       <div class="container"> 
         <div class="bk">
-          <script>
-
-          </script>
           <div id="chart_div" class="box">
           </div>
         </div>

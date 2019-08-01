@@ -22,7 +22,7 @@ var list;
                         setInterval(function () {
                             //var obj = jQuery.get('../module/data.json');
                             try{
-                              jQuery.getJSON( "../module/data.json", function( data ) {
+                              jQuery.getJSON( "../database/data.json", function( data ) {
                                 list = data;
                               });
                             console.log(list);

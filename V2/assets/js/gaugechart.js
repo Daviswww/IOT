@@ -7,7 +7,8 @@ function drawChart() {
     ['Label', 'Value'],
     ['soil', 0],
     ['air', 0],
-    ['temperature', 0]
+    ['temperature', 0],
+    ['air', 0]
   ]);
 
   var options = {

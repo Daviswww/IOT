@@ -9,11 +9,11 @@ recognition.onstart = function(){
 };
 
 recognition.onresult = function(event){
-    //console.log(event);
+    console.log(event);
     const current = event.resultIndex;
     const transcript = event.results[current][0].transcript;
     content.textContent = transcript;
-    /*
+
     $.ajax({         
         url: '../control/pubControl.php',
         cache: false,
@@ -31,7 +31,6 @@ recognition.onresult = function(event){
     });
     
     window.location.href = 'https://192.168.1.6/IOT/V2/control/pubControl.php?&msg=' + transcript;
-    */
     console.log(transcript);
     readOutLoud(transcript);
 };

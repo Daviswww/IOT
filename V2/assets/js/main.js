@@ -7,7 +7,7 @@ $(function(){
         var url = "../module/dbLast.php";
         var data = {'type':1};
         $.ajax({
-        type : "POST",
+        type : "GET",
         async : false, //同步请求
         url : url,
         data : data,

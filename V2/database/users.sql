@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `users_first` varchar(20) NOT NULL,
-  `users_last` varchar(20) NOT NULL,
+  `users_host` varchar(20) NOT NULL,
+  `users_name` varchar(20) NOT NULL,
   `users_email` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
   `users_id` varchar(20) NOT NULL,
   `users_psw` varchar(20) NOT NULL
@@ -55,7 +55,7 @@ ALTER TABLE `users`
 -- 使用資料表自動增長(AUTO_INCREMENT) `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

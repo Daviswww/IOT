@@ -15,8 +15,8 @@ if(empty($_COOKIE['uid'])){
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="../assets/js/side-bar.js"></script>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/formstyle.css">
     <script src="../assets/js/sensor.js"></script>
+    <link rel="stylesheet" href="../assets/css/switchstyle.css">
   </head>
   <body>
   	<nav class="nav-main">
@@ -25,6 +25,7 @@ if(empty($_COOKIE['uid'])){
         <li><a href="home.php">IOT</a></li>
         <li><a href="switch.php">switch</a></li>
         <li><a href="chart.php">Chart</a></li>
+        <li><a href="creat.php">Edit</a></li>
       </ul>
       <div class="userid">
         <ul >
@@ -38,7 +39,6 @@ if(empty($_COOKIE['uid'])){
           <span>LIST</span>
           <li><a href="home.php">室內</a></li>
           <li><a href="#">室外</a></li>
-          <li><a href="#">花園</a></li>
       </ul>
     </div>
     <div class="inside">

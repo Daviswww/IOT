@@ -21,7 +21,7 @@ class Mqttget extends Mqtt
         } else {
             echo "Time out!\n";
         }
-        header("Location: ../view/publish.php?pub=done&msg=". $msg);
+        //header("Location: ../view/publish.php?pub=done&msg=". $msg);
     }
     public function subscribe()
     {
@@ -30,8 +30,8 @@ class Mqttget extends Mqtt
             exit(1);
         }
         //接收資料
-        $topics['ma'] = array("qos" => 0, "function" => "procmsg");
-        //$topics['mc'] = array("qos" => 0, "function" => "procmsg");
+        $topics['L'] = array("qos" => 0, "function" => "procmsg");
+        $topics['H'] = array("qos" => 0, "function" => "procmsg");
         $mqtt->subscribe($topics, 0);
         
         while($mqtt->proc()){
@@ -44,11 +44,11 @@ class Mqttget extends Mqtt
 
 function procmsg($topic, $msg)
 {   
-    if($msg[1] == 'a')
+    if($topic == 'L')
     {
         $conn->getINSdata($msg);        
     }
-    if($msg[1] == 'b')
+    if($topic == 'H')
     {
         $conn->getINSdata($msg);        
     }

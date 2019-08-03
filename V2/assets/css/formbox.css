@@ -1,0 +1,110 @@
+.creat_box{
+    padding: 80px 80px;
+}
+.creat_box{
+    flex-flow: row wrap;
+}
+.creat_box .form {
+    height: 600px;
+    width: 100%;
+    background-color: rgb(41, 46, 46);
+}
+.creat_box .form .box1{
+    padding: 5px 0px;
+    z-index: 1000;
+}
+.creat_box .form .creat_bb{
+    padding: 40px 160px;
+    font-size:20px;
+}
+.creat_box .form .creat_bb .sensor-form{
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+    align-items: center;
+    line-height: 60px;
+}
+.creat_box .form .creat_bb .switch-form{
+    display: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+    align-items: center;
+    line-height: 60px;
+}
+.creat_box .form .creat_bb .type{
+    color: aliceblue;
+}
+.creat_box .form .creat_bb .errmsg{
+    color: red;
+}
+.creat_box .form .creat_bb .type input{
+    margin: .6rem;
+}
+.creat_box .form .creat_bb .sensor-form input{
+    margin: 0 20px;
+    padding: 10px;
+    width: 30%;
+    font-size:16px;
+    border-radius:6px;
+}
+
+.creat_box .form .creat_bb .switch-form input{
+    margin: 0 20px;
+    padding: 10px;
+    width: 30%;
+    font-size:16px;
+    border-radius:6px;
+}
+.bt-box{
+    width: 100%;
+    padding: 40px 25%;
+    
+}
+.bt-box button {
+    text-transform: uppercase;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.modify {
+    background-color: white; 
+    color: black; 
+    border: 2px solid rgb(207, 128, 54);
+}
+
+.modify:hover {
+    background-color: rgb(207, 128, 54);
+    color: white;
+}
+
+.delete {
+    background-color: white; 
+    color: black; 
+    border: 2px solid rgb(219, 70, 70);
+}
+
+.delete:hover {
+    background-color: rgb(219, 70, 70);
+    color: white;
+}
+
+
+.insert {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.insert:hover {
+    background-color: #4CAF50;
+    color: white;
+}

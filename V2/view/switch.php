@@ -23,6 +23,7 @@ if(empty($_COOKIE['uid'])){
         <li><a href="home.php">IOT</a></li>
         <li><a href="switch.php">switch</a></li>
         <li><a href="chart.php">chart</a></li>
+        <li><a href="creat.php">Edit</a></li>
       </ul>
       <div class="userid">
             <ul >
@@ -36,7 +37,7 @@ if(empty($_COOKIE['uid'])){
           <span>LIST</span>
           <li><a href="#">一樓</a></li>
           <li><a href="#">二樓</a></li>
-          <li><a href="#">三樓</a></li>
+          <li><a href="#">花園</a></li>
       </ul>
 
     </div>

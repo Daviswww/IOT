@@ -63,12 +63,12 @@ table tr td{
 	cursor: pointer;
 	width: 64px;
 	height: 64px;
-	background-image:url('https://img.icons8.com/material/64/000000/cloud-connection.png');
+	background-image:url('./../img/1.png');
 	background-repeat:no-repeat;
 }
 
 .nav-main ul li #sidebar:hover{
-	background-image:url('https://img.icons8.com/material-outlined/64/000000/cloud-connection.png');
+	background-image:url('./../img/2.png');
 }
 
 .nav-main ul li a{

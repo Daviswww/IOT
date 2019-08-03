@@ -3,25 +3,29 @@ $(function(){
     $.ajax({
         type : "GET",
         async : true,
-        url : 'http://localhost:3000/sensor',
+        url : 'http://192.168.212.107:3000/sensor',
         datatype : 'json',
         data: {},
         timeout: 1000,
         success:function(suc){
+            console.log(suc);
             console.log("Sensor Ready!");
         },
         error:function(err){
             console.log(err);
         }
     }).done(function(res){
-        res.forEach(function(sensor) {
+        res["sensor"].forEach(function(sensors) {
             $('#container').append(
             "<div class=\"A\">"+
                 "<div class=\"B\">"+
-                    "<p id="+sensor.typeName+">"+sensor.tmpe+sensor.unit+"</p>"+
-                    "<p>"+sensor.name+"</p>"+
+                    "<p id="+sensors.typeName+">"+sensors.tmpe+sensors.unit+"</p>"+
+                    "<p>"+sensors.name+"</p>"+
                 "</div>"+
-                "<div class=\"C\">Edit</div>"+
+                "<div class=\"C\">"+
+                    "<div class=\"on\" >Edit</div>"+
+                    "<div class=\"off\">Delete</div>"+
+                "</div>"+
             "</div>");
         });
     }).fail(function(err){
@@ -32,7 +36,7 @@ $(function(){
         $.ajax({
             type : "GET",
             async : true,
-            url : 'http://localhost:3000/sensor',
+            url : 'http://192.168.212.107:3000/sensor',
             datatype : 'json',
             timeout: 1000,
         }).done(function(res){

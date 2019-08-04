@@ -1,9 +1,10 @@
+var host = "localhost";
 $(function(){
     setInterval(function(){ showData(); } ,1000);
     $.ajax({
         type : "GET",
         async : true,
-        url : 'http://192.168.212.107:3000/sensor',
+        url : 'http://'+host+':3000/sensor',
         datatype : 'json',
         data: {},
         timeout: 1000,
@@ -15,7 +16,7 @@ $(function(){
             console.log(err);
         }
     }).done(function(res){
-        res["sensor"].forEach(function(sensors) {
+        res.forEach(function(sensors) {
             $('#container').append(
             "<div class=\"A\">"+
                 "<div class=\"B\">"+
@@ -36,7 +37,7 @@ $(function(){
         $.ajax({
             type : "GET",
             async : true,
-            url : 'http://192.168.212.107:3000/sensor',
+            url : 'http://'+host+':3000/sensor',
             datatype : 'json',
             timeout: 1000,
         }).done(function(res){

@@ -5,7 +5,7 @@
     flex-flow: row wrap;
 }
 .creat_box .form {
-    height: 600px;
+    height: 700px;
     width: 100%;
     background-color: rgb(41, 46, 46);
 }
@@ -16,6 +16,9 @@
 .creat_box .form .creat_bb{
     padding: 40px 160px;
     font-size:20px;
+}
+.creat_box .form .creat_bb h1{
+    color: aliceblue;
 }
 .creat_box .form .creat_bb .sensor-form{
     display: block;

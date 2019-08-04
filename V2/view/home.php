@@ -22,10 +22,10 @@ if(empty($_COOKIE['uid'])){
   	<nav class="nav-main">
   	  <ul>
       <li><div id="sidebar" name="btn"></div></li>
-        <li><a href="home.php">IOT</a></li>
-        <li><a href="switch.php">switch</a></li>
-        <li><a href="chart.php">Chart</a></li>
-        <li><a href="creat.php">Edit</a></li>
+        <li><a href="home.php">sensor</a></li><li>/<li>
+        <li><a href="switch.php">switch</a></li><li>/<li>
+        <li><a href="chart.php">live chart</a></li><li>/<li>
+        <li><a href="edit.php">edit</a></li><li>/<li>
       </ul>
       <div class="userid">
         <ul >
@@ -35,7 +35,7 @@ if(empty($_COOKIE['uid'])){
       </div>
     </nav>
     <div id="side-menu"class="side-nav">
-      <ul>
+      <ul id="lst-menu">
           <span>LIST</span>
           <li><a href="home.php">室內</a></li>
           <li><a href="#">室外</a></li>

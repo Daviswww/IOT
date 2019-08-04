@@ -9,8 +9,6 @@ if(empty($_COOKIE['uid'])){
   <head>
     <meta charset="utf-8">
     <title>Home</title>
-    <!---<link rel="stylesheet" href="resetstyle.css">--->
-    <!---<script src="../assets/js/main.js"></script>--->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/formstyle.css">
   </head>

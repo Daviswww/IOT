@@ -1,8 +1,9 @@
+var host = "localhost";
 $(function(){
     $.ajax({
         type : "GET",
         async : true,
-        url : 'http://localhost:3000/sensor',
+        url : 'http://'+host+':3000/sensor',
         datatype : 'json',
         data: {},
         timeout: 1000,
@@ -24,7 +25,7 @@ $(function(){
     $.ajax({
         type : "GET",
         async : true,
-        url : 'http://localhost:3000/switch',
+        url : 'http://'+host+':3000/switch',
         datatype : 'json',
         data: {},
         timeout: 1000,
@@ -44,7 +45,6 @@ $(function(){
         console.log("switch err!");
     })
     $("#SelectType").click(function(){
-       
         var val=$('input:radio[name="type"]:checked').val();
         if(val=="sensor"){
             document.getElementById('sensor-list').style.display = "block";
@@ -64,7 +64,7 @@ $(function(){
             $.ajax({
                 type : "GET",
                 async : true,
-                url : 'http://localhost:3000/sensor/'+e.target.id.split("-")[1],
+                url : 'http://'+host+':3000/sensor/'+e.target.id.split("-")[1],
                 datatype : 'json',
                 data: {},
                 timeout: 1000
@@ -83,7 +83,7 @@ $(function(){
             $.ajax({
                 type : "GET",
                 async : true,
-                url : 'http://localhost:3000/switch/'+e.target.id.split("-")[1],
+                url : 'http://'+host+':3000/switch/'+e.target.id.split("-")[1],
                 datatype : 'json',
                 data: {},
                 timeout: 1000

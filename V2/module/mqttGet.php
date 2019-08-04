@@ -1,14 +1,15 @@
 <?php
-include './dbGet.php';
-include './../includes/jsonServer.inc.php';
+include 'dbGet.php';
+include '../includes/jsonServer.inc.php';
 include 'D:/XAMPP/htdocs/IOT/V2/includes/mqtt.inc.php';
 $conn = new Dbget();
+/*
 $jSer = new jsonServer();
 $jds = json_decode($a->get($url));
 for($i = 0 ; $i < sizeof($jds); $i++)
 {
     echo json_encode($jds[$i]->{'name'});
-}
+}*/
 class Mqttget extends Mqtt
 {
     public function publish($msg)

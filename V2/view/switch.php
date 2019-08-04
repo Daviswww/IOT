@@ -8,11 +8,10 @@ if(empty($_COOKIE['uid'])){
   <head>
     <meta charset="utf-8">
     <title>Switch</title>
-    <!---<link rel="stylesheet" href="resetstyle.css">--->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="../assets/js/switchh.js"></script>
-    <!--<script src="../assets/js/reco.js"></script>-->
-    <script src="../assets/js/side-bar.js"></script>
+    <script type="text/javascript" src="../assets/js/switchh.js"></script>
+    <script type="text/javascript" src="../assets/js/recall.js"></script>
+    <script type="text/javascript" src="../assets/js/side-bar.js"></script>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/switchstyle.css">
   </head>
@@ -20,10 +19,10 @@ if(empty($_COOKIE['uid'])){
   	<nav class="nav-main">
   	  <ul>
       <li><div id="sidebar" name="btn"></div></li>
-        <li><a href="home.php">IOT</a></li>
-        <li><a href="switch.php">switch</a></li>
-        <li><a href="chart.php">chart</a></li>
-        <li><a href="creat.php">Edit</a></li>
+        <li><a href="home.php">sensor</a></li><li>/<li>
+        <li><a href="switch.php">switch</a></li><li>/<li>
+        <li><a href="chart.php">live chart</a></li><li>/<li>
+        <li><a href="edit.php">edit</a></li><li>/<li>
       </ul>
       <div class="userid">
             <ul >
@@ -33,13 +32,13 @@ if(empty($_COOKIE['uid'])){
           </div>
     </nav>
     <div id="side-menu" class="side-nav">
-      <ul>
+      <ul id="lst-menu">
           <span>LIST</span>
           <li><a href="#">一樓</a></li>
           <li><a href="#">二樓</a></li>
           <li><a href="#">花園</a></li>
+          <li><a href="#">語音</a></li>
       </ul>
-
     </div>
     <div class="inside">
       <div id="container" class="container">
@@ -53,8 +52,7 @@ if(empty($_COOKIE['uid'])){
         </div>
         <div class="C">
         <button class="talk">Talk</button>
-      </div>
-
+        </div>
       </div>
     </div>
     </body>

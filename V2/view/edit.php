@@ -1,12 +1,19 @@
+<?php
+if(empty($_COOKIE['uid'])){
+    header("Location: ../index.php?loginXerror");
+}
+?>
+
 <!DOCTYPE HTML>
 <html>
     <head>
         <meta charset="UTF-8">
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="../assets/js/drop-down-list.js"></script>
-        <script src="../assets/js/creat.js"></script>
-        <script src="../assets/js/jserver.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../assets/js/drop-down-list.js"></script>
+        <script type="text/javascript" src="../assets/js/side-bar.js"></script>
+        <script type="text/javascript" src="../assets/js/creat.js"></script>
+        <script type="text/javascript" src="../assets/js/jserver.js"></script>
         <link rel="stylesheet" href="../assets/css/formbox.css">
         <link rel="stylesheet" href="../assets/css/drop-down-list.css">
         <link rel="stylesheet" href="../assets/css/style.css">
@@ -15,23 +22,30 @@
     <nav class="nav-main">
   	  <ul>
         <li><div id="sidebar" name="btn"></div>
-        <li><a href="home.php">IOT</a></li>
-        <li><a href="switch.php">switch</a></li>
-        <li><a href="chart.php">Chart</a></li>
-        <li><a href="creat.php">Edit</a></li>
-        <!--
+        <li><a href="home.php">sensor</a></li><li>/<li>
+        <li><a href="switch.php">switch</a></li><li>/<li>
+        <li><a href="chart.php">chart</a></li><li>/<li>
+        <li><a href="edit.php">edit</a></li><li>/<li>
+
         <div class="userid">
         <ul >
           <li>USER: <?php echo $_COOKIE['uid'];?></li>
           <li><a name="signout" href="../control/sign-out.php">sign-out</a></li>
         </ul>
-      </div>-->
+      </div>
   	  </ul>
     </nav>	
+    <div id="side-menu" class="side-nav">
+      <ul id="lst-menu">
+          <span>MENU</span>
+          <li><a href="home.php">sensor</a></li>
+        <li><a href="switch.php">switch</a></li>
+        <li><a href="chart.php">chart</a></li>
+        <li><a href="edit.php">edit</a></li>
+      </ul>
+    </div>
     <div class="creat_box">
       <div class="form">
-        <div class="box1">
-        </div>
         <div class="creat_bb">
           <div id="SelectType" class="type">
             <input type="radio" value="sensor" name="type" checked><label for="sen" >感應器</label>

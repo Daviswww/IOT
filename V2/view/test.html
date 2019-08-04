@@ -1,28 +1,48 @@
-<!DOCTYPE HTML>
+<!--
+<?php
+if(empty($_COOKIE['uid'])){
+  header("Location: ../index.php?loginXerror");
+}
+?>
+-->
+<!DOCTYPE html>
 <html>
-    <head>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="../assets/js/side-bar.js"></script>
-        <link rel="stylesheet" href="../assets/css/test.css">
-        <link rel="stylesheet" href="../assets/css/style.css">
-    </head>
-    <body>
-    <script src="../assets/js/test.js"></script>
-    <nav class="nav-main">
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="../assets/js/side-bar.js"></script>
+    <script type="text/javascript" src="../assets/js/test.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/switchstyle.css">
+  </head>
+  <body>
+  	<nav class="nav-main">
   	  <ul>
-        <li><div id="sidebar" name="btn"></div>
-        <li><a href="home.php">IOT</a></li>
-        <li><a href="switch.php">switch</a></li>
-        <li><a href="chart.php">Chart</a></li>
-        <li><a href="creat.php">Creat</a></li>
-  	  </ul>	
-    
-    <div class="creat_box">
-        <div class="box">
-            <div id="on" value="1">test<div>
-            <div id="on" value="2">test<div>
-        </div>
+      <li><div id="sidebar" name="btn"></div></li>
+        <li><a href="home.php">sensor</a></li><li>/<li>
+        <li><a href="switch.php">switch</a></li><li>/<li>
+        <li><a href="chart.php">live chart</a></li><li>/<li>
+        <li><a href="edit.php">edit</a></li><li>/<li>
+      </ul>
+      <div class="userid">
+            <ul >
+              <!--<li>USER: <?php echo $_COOKIE['uid'];?></li>-->
+              <li><a name="signout"  href="../control/sign-out.php">sign-out</a></li>
+            </ul>
+          </div>
+    </nav>
+    <div id="side-menu" class="side-nav">
+      <ul id="lst-menu">
+          <span>LIST</span>
+          <li><a href="#">一樓</a></li>
+          <li><a href="#">二樓</a></li>
+          <li><a href="#">花園</a></li>
+          <li><a href="#">語音</a></li>
+      </ul>
+    </div>
+    <div class="inside">
+        <div id="container" style="min-width:400px;height:400px"></div>
     </div>
     </body>
-</html>
+  </html>

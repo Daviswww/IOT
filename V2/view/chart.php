@@ -32,6 +32,7 @@ if(empty($_COOKIE['uid'])){
         <li><a href="switch.php">switch</a></li><li>/<li>
         <li><a href="chart.php">live chart</a></li><li>/<li>
         <li><a href="edit.php">edit</a></li><li>/<li>
+        <li><a href="talk.php">talk</a></li><li>/<li>
         <div class="userid">
         <ul >
           <!--<li>USER: <?php echo $_COOKIE['uid'];?></li>-->

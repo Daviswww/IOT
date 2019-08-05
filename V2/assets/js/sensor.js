@@ -1,22 +1,8 @@
 var host = "localhost";
 $(function(){
     setInterval(function(){ showData(); } ,1000);
-    $.ajax({
-        type : "GET",
-        async : true,
-        url : 'http://'+host+':3000/sensor',
-        datatype : 'json',
-        data: {},
-        timeout: 1000,
-        success:function(suc){
-            console.log(suc);
-            console.log("Sensor Ready!");
-        },
-        error:function(err){
-            console.log(err);
-        }
-    }).done(function(res){
-        res.forEach(function(sensors) {
+    $.getJSON('../assets/api/db.json', function(res) { 
+        res['sensor'].forEach(function(sensors) {
             $('#container').append(
             "<div class=\"A\">"+
                 "<div class=\"B\">"+
@@ -29,23 +15,15 @@ $(function(){
                 "</div>"+
             "</div>");
         });
-    }).fail(function(err){
-        console.log(err);
-    })
+    }).done(function(res){
+        console.log('Sensor ready!');
+    });
 
     function showData(){
-        $.ajax({
-            type : "GET",
-            async : true,
-            url : 'http://'+host+':3000/sensor',
-            datatype : 'json',
-            timeout: 1000,
-        }).done(function(res){
-            res.forEach(function(sensor) {
+        $.getJSON('../assets/api/db.json', function(res) { 
+            res['sensor'].forEach(function(sensor) {
                 $("#"+sensor.typeName).html(sensor.tmpe+sensor.unit);
             });
-        }).fail(function(err){
-            console.log('showDB Error!');
         })
     }
 });

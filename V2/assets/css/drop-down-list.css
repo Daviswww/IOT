@@ -5,7 +5,7 @@
 
 
 .wrapper-dropdown {
-  z-index: 6000;
+  z-index: 2000;
   /* Size & position */
   position: relative;
   width: 60%;

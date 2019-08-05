@@ -11,7 +11,7 @@ if(empty($_COOKIE['uid'])){
   <head>
     <meta charset="utf-8">
     <title>Home</title>
-    <!---<link rel="stylesheet" href="resetstyle.css">--->
+    <!--<link rel="stylesheet" href="resetstyle.css">-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="../assets/js/side-bar.js"></script>
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -26,6 +26,7 @@ if(empty($_COOKIE['uid'])){
         <li><a href="switch.php">switch</a></li><li>/<li>
         <li><a href="chart.php">live chart</a></li><li>/<li>
         <li><a href="edit.php">edit</a></li><li>/<li>
+        <li><a href="talk.php">talk</a></li><li>/<li>
       </ul>
       <div class="userid">
         <ul >

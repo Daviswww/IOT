@@ -40,8 +40,9 @@ if(empty($_COOKIE['uid'])){
           <span>MENU</span>
           <li><a href="home.php">sensor</a></li>
         <li><a href="switch.php">switch</a></li>
-        <li><a href="chart.php">chart</a></li>
+        <li><a href="chart.php">live chart</a></li>
         <li><a href="edit.php">edit</a></li>
+        <li><a href="talk.php">talk</a></li><li>/<li>
       </ul>
     </div>
     <div class="creat_box">

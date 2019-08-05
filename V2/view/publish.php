@@ -35,7 +35,7 @@ if(empty($_COOKIE['uid'])){
           Hello World2!
         </h1>
         <img style="-webkit-user-select: none;" src="http://140.126.20.95/video.cgi?&user=admin&pwd=123456" width="320" height="240">
-        <form action = "../control/pubControl.php" method="GET">
+        <form action = "../control/pubControl.php" method="POST">
         	MSG:
             <input type="text" name="msg"><br>
         	<button class="button" type="submit" name = "submit" ><span>PUBLISH</span></button>

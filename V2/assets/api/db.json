@@ -3,7 +3,7 @@
     {
       "typeName": "soil_humidity",
       "name": "泥土濕度",
-      "tmpe": "10",
+      "tmpe": "0",
       "unit": "％",
       "id": 1
     },
@@ -45,9 +45,9 @@
   ],
   "switch": [
     {
-      "typeName": "1",
+      "typeName": "0",
       "name": "客廳燈",
-      "status": 0,
+      "status": "0",
       "id": 1
     },
     {

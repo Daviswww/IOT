@@ -1,6 +1,5 @@
 var host = "localhost";
 $(function(){
-
     $('#delete').on('click',function(){
         document.getElementById('errmsg').style.color= "red";
         let val=$('input:radio[name="type"]:checked').val();
@@ -13,6 +12,8 @@ $(function(){
             }).done(function(res){
                 document.getElementById('errmsg').style.color= "green";
                 document.getElementById('errmsg').innerHTML= "* "+val+id+" is delete!";
+                $("#"+val+'s-'+id).remove();
+                console.log(id);
             }).fail(function(err){
                 console.log(err);
             })            
@@ -56,8 +57,10 @@ $(function(){
                         unit: unit
                     },
                     success:function(suc){
+
                         document.getElementById('errmsg').style.color= "green";
                         document.getElementById('errmsg').innerHTML= "accept new "+val+"!";
+                        $('#sensor-list').append("<li><a id=\"sensors-"+suc.id+"\">"+ suc.name +"</a></li>");
                     },
                     error:function(err){
                         document.getElementById('errmsg').innerHTML= "* "+val+" post fail!";
@@ -114,7 +117,7 @@ $(function(){
             document.getElementById('errmsg').innerHTML= "* "+val+" name is empty!";
             return false;
         }
-        if(getV(val, typeName)){
+        if(getV(val, typeName, id)){
             if(val==="sensor"){
                 $.ajax({
                     url:'http://'+host+':3000/'+val+'/'+id,
@@ -160,19 +163,20 @@ $(function(){
             document.getElementById('errmsg').innerHTML= "* "+val+" Type Name is repeat!";
         }
     });
-    function getV(val, typeName){
+    function getV(val, typeName, id){
         var go = true;
         $.ajax({
-            url:'http://'+host+':3000/'+val+'?typeName='+typeName,
+            url:'http://'+host+':3000/'+val,
             method:'get',
             async : false,
             datatype: 'json',
-            success:function(suc ){
-                if(suc.length){
-                    go = false;
-                }else{
-                    go = true;
-                }
+            success:function(suc){
+                suc.forEach(function(sensors) {
+                    if(sensors.typeName===typeName && sensors.id!=id)
+                    {
+                        go = false;
+                    }
+                });
             },
             error:function(err){
                 console.log("get error!")

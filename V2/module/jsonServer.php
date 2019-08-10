@@ -37,15 +37,4 @@ class jsonServer
         $result = curl_exec($ch);
     }
 }
-/*
-//Example:
-$url = 'http://localhost:3000/sensor';
-
-$a = new jsonServer();
-$jds = json_decode($a->get($url));
-for($i = 0 ; $i < sizeof($jds); $i++)
-{
-    echo json_encode($jds[$i]->{'name'});
-}
-*/
 ?>

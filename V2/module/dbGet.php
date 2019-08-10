@@ -18,9 +18,14 @@ class Dbget extends Dbh
         }
 	}
 	
-    public function getINSdata($msg)
+    public function getINSdata($topic, $msg)
     {
-		$sql = "INSERT INTO farmer1(sen, soil_humidity, air_humidity, temperature, rainfall, illumination) VALUES($msg)";
+		$add = "s0";
+		$msgs = explode(",",$msg);
+		for($i = 1; $i < sizeof($msgs); $i++){
+			$add .= ",s". $i;
+		}
+		$sql = "INSERT INTO $topic($add) VALUES($msg)";
 		$result = $this->connect()->query($sql);
 		//header ("Location: ../page/insert.php?insert=done");
 	}
@@ -52,13 +57,13 @@ class Dbget extends Dbh
 	}
     public function getDELdata($name)
     {
-		$sql = "delete from dbcard where cardname = '$name'";
+		$sql = "delete from dbcard where cardname = $name";
 		$result = $this->connect()->query($sql);
 		header ("Location: ../page/delete.php?delete=done");
 	}
 
-	public function getLASTdata(){
-		$sql = 'SELECT * FROM farmer1 ORDER BY id DESC LIMIT 1';
+	public function getLASTdata($tb){
+		$sql = "SELECT * FROM $tb ORDER BY id DESC LIMIT 1";
 		$result = $this->connect()->query($sql);
 
 		while($row = $result->fetch_assoc()){

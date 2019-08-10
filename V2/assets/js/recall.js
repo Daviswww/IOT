@@ -1,6 +1,6 @@
 $(function(){
-    const btn = document.querySelector('.talk');
-    const content = document.querySelector('.content');
+    const btn = document.querySelector('#msg-talk');
+    const content = document.querySelector('#bot-user');
 
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
@@ -14,7 +14,7 @@ $(function(){
         const current = event.resultIndex;
         const transcript = event.results[current][0].transcript;
         content.textContent = transcript;
-
+        document.getElementById('bot-user').innerHTML = 'User: '+transcript;
         $.ajax({         
             url: '../control/pubControl.php',
             cache: false,
@@ -24,9 +24,11 @@ $(function(){
                 msg: transcript
             },
             error: function(xhr) {
+                document.getElementById('bot-pc').innerHTML = 'Alice: 請再說一遍';
                 console.log("recall error");
             },
             success: function(response) {
+                document.getElementById('bot-pc').innerHTML = 'Alice: 接收到命令!';
                 console.log('liv:'+response);
             }
         });
@@ -36,7 +38,8 @@ $(function(){
         readOutLoud(transcript);
     };
 
-    $('#talk').on('click',function(){
+    $('#msg-talk').on('click',function(){
+        document.getElementById('bot-pc').innerHTML = 'Alice: 讀取中...';
         recognition.start();
     });
 

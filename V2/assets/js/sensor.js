@@ -6,12 +6,10 @@ $(function(){
             $('#container').append(
             "<div class=\"A\">"+
                 "<div class=\"B\">"+
-                    "<p id="+sensors.typeName+">"+sensors.tmpe+sensors.unit+"</p>"+
-                    "<p>"+sensors.name+"</p>"+
+                    "<p class=\"bj kk\" id=\"s"+(sensors.order)+"\">"+sensors.tmpe+"</p><p class=\"bj kk\">"+sensors.unit+"</p>"+
                 "</div>"+
                 "<div class=\"C\">"+
-                    "<div class=\"on\" >Edit</div>"+
-                    "<div class=\"off\">Delete</div>"+
+                "<p>"+sensors.name+"</p>"+
                 "</div>"+
             "</div>");
         });
@@ -20,10 +18,10 @@ $(function(){
     });
 
     function showData(){
-        $.getJSON('../assets/api/db.json', function(res) { 
-            res['sensor'].forEach(function(sensor) {
-                $("#"+sensor.typeName).html(sensor.tmpe+sensor.unit);
-            });
+        $.getJSON('../assets/api/sensor.php', function(data) { 
+            for(var i = 0; i < Object.keys(data).length-2; i++){
+                $("#s"+i).html(data['s'+i]);
+            };
         })
     }
 });

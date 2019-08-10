@@ -43,7 +43,7 @@ if(empty($_COOKIE['uid'])){
       <h1>Hello World!</h1>
           <button class="talk">Talk</button>
           <h3 class="content"></h3>
-          <script src="../assets/js/reco.js"></script>
+          <script src="../assets/js/recall.js"></script>
       </div>
       </div>
     </div>

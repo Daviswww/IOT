@@ -1,6 +1,4 @@
 <?php
-include '../module/dbGet.php';
-$get = new Dbget();
 if(empty($_COOKIE['uid'])){
   header("Location: ../index.php?loginXerror");
 }
@@ -16,7 +14,7 @@ if(empty($_COOKIE['uid'])){
     <script src="../assets/js/side-bar.js"></script>
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/sensor.js"></script>
-    <link rel="stylesheet" href="../assets/css/switchstyle.css">
+    <link rel="stylesheet" href="../assets/css/formstyle.css">
   </head>
   <body>
   	<nav class="nav-main">
@@ -24,9 +22,10 @@ if(empty($_COOKIE['uid'])){
       <li><div id="sidebar" name="btn"></div></li>
         <li><a href="home.php">sensor</a></li><li>/<li>
         <li><a href="switch.php">switch</a></li><li>/<li>
-        <li><a href="chart.php">live chart</a></li><li>/<li>
+        <li><a href="chart.php">live</a></li><li>/<li>
+        <li><a href="live.php">live</a></li><li>/<li>
+        <li><a href="talk.php">ibot</a></li><li>/<li>
         <li><a href="edit.php">edit</a></li><li>/<li>
-        <li><a href="talk.php">talk</a></li><li>/<li>
       </ul>
       <div class="userid">
         <ul >

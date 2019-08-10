@@ -28,15 +28,13 @@ SET time_zone = "+00:00";
 -- 資料表結構 `farmer1`
 --
 
-CREATE TABLE `farmer1` (
+CREATE TABLE `status` (
   `id` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `soil_humidity` int(5) NOT NULL,
-  `air_humidity` int(5) NOT NULL,
-  `temperature` int(5) NOT NULL,
-  `sen` varchar(100) NOT NULL,
-  `rainfall` int(5) DEFAULT NULL,
-  `illumination` int(5) DEFAULT NULL
+  `s0` int(5) NOT NULL,
+  `s1` int(5) NOT NULL,
+  `s2` int(5) NOT NULL,
+  `s3` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -50,7 +48,7 @@ CREATE TABLE `farmer1` (
 --
 -- 資料表索引 `farmer1`
 --
-ALTER TABLE `farmer1`
+ALTER TABLE `status`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -60,7 +58,7 @@ ALTER TABLE `farmer1`
 --
 -- 使用資料表自動增長(AUTO_INCREMENT) `farmer1`
 --
-ALTER TABLE `farmer1`
+ALTER TABLE `status`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 COMMIT;
 

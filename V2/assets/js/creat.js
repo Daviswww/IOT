@@ -70,6 +70,7 @@ $(function(){
                 timeout: 1000
             }).done(function(res){
                 document.getElementById('sensor-id-Number').value = res.id;
+                document.getElementById('sensor-order').value = res.order;
                 document.getElementById('sensor-type-Name').value = res.typeName;
                 document.getElementById('sensor-Name').value = res.name;
                 document.getElementById('sensor-unit').value = res.unit;
@@ -90,6 +91,7 @@ $(function(){
             }).done(function(res){
                 document.getElementById('ls-tag').innerHTML= res.name;
                 document.getElementById('switch-id-Number').value = res.id;
+                document.getElementById('switch-order').value = res.order;
                 document.getElementById('switch-type-Name').value = res.typeName;
                 document.getElementById('switch-Name').value = res.name;
             }).fail(function(err){

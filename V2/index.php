@@ -47,7 +47,7 @@
           
           <p class="forgot"><a href="#">Forgot Password?</a></p>
           
-          <button name="signin" class="button button-block">Log In</button>
+          <button name="signin" class="button button-block">SIGN-IN</button>
           
           </form>
         </div>
@@ -92,7 +92,7 @@
             <input name="user_password" type="password"required autocomplete="off"/>
           </div>
           
-          <button name="signup" type="submit" class="button button-block">Get Started</button>
+          <button name="signup" type="submit" class="button button-block">SIGN-UP</button>
           
           </form>
 

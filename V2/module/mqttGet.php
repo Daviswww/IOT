@@ -1,15 +1,7 @@
 <?php
-include 'dbGet.php';
-include '../includes/jsonServer.inc.php';
+include 'D:/XAMPP/htdocs/IOT/V2/module/dbGet.php';
 include 'D:/XAMPP/htdocs/IOT/V2/includes/mqtt.inc.php';
-$conn = new Dbget();
-/*
-$jSer = new jsonServer();
-$jds = json_decode($a->get($url));
-for($i = 0 ; $i < sizeof($jds); $i++)
-{
-    echo json_encode($jds[$i]->{'name'});
-}*/
+
 class Mqttget extends Mqtt
 {
     public function publish($msg)
@@ -17,7 +9,7 @@ class Mqttget extends Mqtt
         $mqtt = $this->setmqtt();
         if ($mqtt->connect(true, NULL, $this->username, $this->password)) {
             //設定傳送對象
-            $mqtt->publish("12345", $msg, 0);
+            $mqtt->publish("control", $msg, 0);
             $mqtt->close();
         } else {
             echo "Time out!\n";
@@ -31,8 +23,8 @@ class Mqttget extends Mqtt
             exit(1);
         }
         //接收資料
-        $topics['L'] = array("qos" => 0, "function" => "procmsg");
-        $topics['H'] = array("qos" => 0, "function" => "procmsg");
+        $topics['sensor'] = array("qos" => 0, "function" => "procmsg");
+        $topics['status'] = array("qos" => 0, "function" => "procmsg");
         $mqtt->subscribe($topics, 0);
         
         while($mqtt->proc()){
@@ -44,13 +36,14 @@ class Mqttget extends Mqtt
 }
 
 function procmsg($topic, $msg)
-{   
-    if($topic == 'L')
-    {
-        $conn->getINSdata($msg);        
+{
+    $conn = new Dbget();
+    try{
+        $conn->getINSdata($topic, $msg); 
     }
-    if($topic == 'H')
-    {
-        $conn->getINSdata($msg);        
+    catch(Exception $err){
+        echo $topic . "error!";
     }
 }
+
+?>

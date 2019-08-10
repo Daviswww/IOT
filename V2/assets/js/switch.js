@@ -1,16 +1,16 @@
 $(function(){
-    setInterval(function(){ showData() } ,1000);
+    setInterval(function(){ showData(); } ,1000);
     $.getJSON('../assets/api/db.json', function(res) { 
         res['switch'].forEach(function(switchs) {
             $('#container').append(
                 "<div  class=\"A\">"+
                 "<div class=\"B\">"+
-                    "<p class=\"D\">"+switchs.name+"</p>"+
-                    "<p id=\""+switchs.typeName+"\">"+(switchs.status? "YES":"NO")+"</p>"+
+                    "<p class=\"D\">"+switchs.name+switchs.typeName+"</p>"+
+                    "<p id=\"s"+switchs.order+"\">Loding...</p>"+
                 "</div>"+
                 "<div class=\"C\">"+
-                    "<div id=\"on"+switchs.typeName+"\" class=\"on\">ON</div>"+
-                    "<div id=\"on"+switchs.typeName+"\" class=\"off\">OFF</div>"+
+                    "<div id=\"n"+switchs.order+"\" class=\"on\">ON</div>"+
+                    "<div id=\"f"+switchs.order+"\" class=\"off\">OFF</div>"+
                 "</div>"+
                 "</div>");
         });
@@ -19,10 +19,10 @@ $(function(){
     });
 
     function showData(){
-        $.getJSON('../assets/api/db.json', function(data) { 
-            data['switch'].forEach(function(switchs) {
-                $("#"+switchs.typeName).html((switchs.status? "YES":"NO"));
-            });
-        })
+        $.getJSON("../assets/api/status.php", function(data){
+            for(var i = 0; i < Object.keys(data).length-2; i++){
+                $("#s"+i).html((data['s'+i] == "1"? "YES":"NO"));
+            }
+        });
     }
 });

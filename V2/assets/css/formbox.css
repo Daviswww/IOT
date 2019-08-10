@@ -1,17 +1,12 @@
 .creat_box{
     padding: 80px 80px;
-}
-.creat_box{
     flex-flow: row wrap;
+    height: 50%;
 }
 .creat_box .form {
-    height: 700px;
+    height: 50%;
     width: 100%;
     background-color: rgb(41, 46, 46);
-}
-.creat_box .form .box1{
-    padding: 5px 0px;
-    z-index: 1000;
 }
 .creat_box .form .creat_bb{
     padding: 40px 160px;

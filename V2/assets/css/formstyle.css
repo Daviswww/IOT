@@ -3,6 +3,7 @@
 }
 
 .container{
+	
 	width:100%;
 	display:flex;
 	flex-flow: row wrap;
@@ -22,18 +23,21 @@
 	flex-direction: column;
 }
 .container .A .B{
+	padding-top: 25px;
 	width: 200px;
 	height: 180px;
 	background-color: #373142;
 }
-.container .A .B p{
-	height: 60px;
+.container .A .B .bj{
+	display: inline-block; 
+}
+.kk{
 	margin-left: 30px;
 	text-align: left;
-	font-size: 40px;
+	font-size: 50px;
 }
-.container .A .C{
-	height: 50px;
+.container .A .C{ 
+	padding-top: 10px;
 	color: black;
 	line-height: 40px;
 	text-align: center;

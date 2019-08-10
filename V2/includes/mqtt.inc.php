@@ -10,10 +10,10 @@ class Mqtt
 
     protected function setmqtt()
     {
-        $this->server = "140.126.20.95";
+        $this->server = "140.126.20.183";
         $this->port = "1883";
-        $this->username = "dda";
-        $this->password = "12312311";
+        $this->username = "smarthome";
+        $this->password = "12341234";
         $this->client_id = "phpMQTT-publisher_1239u13his";
 
         $mqtt = new phpMQTT($this->server, $this->port, $this->client_id);

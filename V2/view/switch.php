@@ -10,6 +10,7 @@ if(empty($_COOKIE['uid'])){
     <title>Switch</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script type="text/javascript" src="../assets/js/switch.js"></script>
+    <script type="text/javascript" src="../assets/js/switch-btn.js"></script>
     <script type="text/javascript" src="../assets/js/recall.js"></script>
     <script type="text/javascript" src="../assets/js/side-bar.js"></script>
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -21,9 +22,10 @@ if(empty($_COOKIE['uid'])){
       <li><div id="sidebar" name="btn"></div></li>
         <li><a href="home.php">sensor</a></li><li>/<li>
         <li><a href="switch.php">switch</a></li><li>/<li>
-        <li><a href="chart.php">live chart</a></li><li>/<li>
+        <li><a href="chart.php">chart</a></li><li>/<li>
+        <li><a href="live.php">live</a></li><li>/<li>
+        <li><a href="talk.php">ibot</a></li><li>/<li>
         <li><a href="edit.php">edit</a></li><li>/<li>
-        <li><a href="talk.php">talk</a></li><li>/<li>
       </ul>
       <div class="userid">
             <ul >
@@ -43,17 +45,6 @@ if(empty($_COOKIE['uid'])){
     </div>
     <div class="inside">
       <div id="container" class="container">
-      <div class="A">
-        <img style="-webkit-user-select: none;" src="http://140.126.20.95/video.cgi?&user=admin&pwd=123456" width="100%" height="100%">
-      </div>
-      <div class="A">
-        <div class="B">
-          <p class="D">語音辨識</p>
-          <p class="content"></p>
-        </div>
-        <div class="C">
-        <button class="talk">Talk</button>
-        </div>
       </div>
     </div>
     </body>

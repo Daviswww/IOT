@@ -1,6 +1,7 @@
 <?php
 include '../module/mqttGet.php';
 $mqtt = new Mqttget();
+
 try
 {
     if(!empty($_POST['msg']))

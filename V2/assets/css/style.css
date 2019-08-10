@@ -27,7 +27,7 @@ table tr td{
 	height: 60px;
 	background-color: #FFF;
 	display: flex;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
 	z-index: 3000;  
 }
 .nav-main ul li a:hover{

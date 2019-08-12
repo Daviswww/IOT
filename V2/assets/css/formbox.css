@@ -22,6 +22,13 @@
     align-items: center;
     line-height: 60px;
 }
+.creat_box .form .creat_bb .auto-form{
+    display: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+    align-items: center;
+    line-height: 60px;
+}
 .creat_box .form .creat_bb .switch-form{
     display: none;
     font-family: Arial, Helvetica, sans-serif;
@@ -36,17 +43,27 @@
     color: red;
 }
 .creat_box .form .creat_bb .type input{
+    outline:none;
     margin: .6rem;
 }
 .creat_box .form .creat_bb .sensor-form input{
+    outline:none;
     margin: 0 20px;
     padding: 10px;
     width: 30%;
     font-size:16px;
     border-radius:6px;
 }
-
+.creat_box .form .creat_bb .auto-form input{
+    outline:none;
+    margin: 0 20px;
+    padding: 10px;
+    width: 30%;
+    font-size:16px;
+    border-radius:6px;
+}
 .creat_box .form .creat_bb .switch-form input{
+    outline:none;
     margin: 0 20px;
     padding: 10px;
     width: 30%;
@@ -105,4 +122,11 @@
 .insert:hover {
     background-color: #4CAF50;
     color: white;
+}
+.auto-form select{
+    margin: 0 5px;
+    padding: 5px;
+    width: auto;
+    font-size:20px;
+    border-radius:6px;
 }

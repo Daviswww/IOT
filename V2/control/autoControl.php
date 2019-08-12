@@ -61,7 +61,7 @@ while(true)
                 $mqtt->publish($msg);
             }    
         }catch(Exception $err){
-            echo $auto[$i]->{'Name'} . "error!";
+            echo $auto[$i]->{'description'} . "error!";
         }  
     }
     $time+=1;

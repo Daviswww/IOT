@@ -3,10 +3,14 @@ include '../module/dbGet.php';
 
 $con = new Dbget();
 $s = '0,0,0';
-
+$msg = date('h:i:s');
+$msgs = explode(":", $msg);
+echo $msg . '<br>';
+echo $msgs[0];
+/*
 $t = 'sensor';
 $con->getINSdata($t, $s);
-/*
+
 INSERT INTO status(s0, s1, s2, s3) VALUES(0,0,0,0);
 INSERT INTO sensor(s0, s1, s2) VALUES(0,0,0);
 

@@ -81,7 +81,8 @@
   ],
   "auto": [
     {
-      "Name": "客廳燈",
+      "order": "0",
+      "description": "客廳燈",
       "switchOrder": "0",
       "onSymbol": "<",
       "onOrder": "0",

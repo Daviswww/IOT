@@ -19,7 +19,7 @@ $(function(){
 
     function showData(){
         $.getJSON('../assets/api/sensor.php', function(data) { 
-            for(var i = 0; i < Object.keys(data).length-2; i++){
+            for(var i = 0; i <= Object.keys(data).length-2; i++){
                 $("#s"+i).html(data['s'+i]);
             };
         })

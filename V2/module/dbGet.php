@@ -77,4 +77,16 @@ class Dbget extends Dbh
 			return $row;
 		}	
 	}
+	public function addTable($tb, $i){
+		$sql = "ALTER TABLE $tb ADD COLUMN s$i int(5)";
+		$result = $this->connect()->query($sql);
+	}
+	public function outOfCsv($path, $tb){
+		$sql = "SELECT * INTO OUTFILE $path FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY \'\n\' FROM $tb";
+		$result = $this->connect()->query($sql);
+		$sql = "TRUNCATE TABLE $tb";
+		$result = $this->connect()->query($sql);
+		echo "Save csv done!";
+	}
+
 }

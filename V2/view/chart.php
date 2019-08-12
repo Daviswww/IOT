@@ -1,10 +1,9 @@
-<!--
 <?php
 if(empty($_COOKIE['uid'])){
     header("Location: ../index.php?loginXerror");
 }
 ?>
--->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -29,14 +28,15 @@ if(empty($_COOKIE['uid'])){
         <li><div id="sidebar" name="btn"></div>
         <li><a href="home.php">sensor </a></li><li>/<li>
         <li><a href="switch.php">switch</a></li><li>/<li>
-        <li><a href="chart.php">live</a></li><li>/<li>
-        <li><a href="live.php">chart</a></li><li>/<li>
+        <li><a href="chart.php">chart</a></li><li>/<li>
+        <li><a href="live.php">live</a></li><li>/<li>
         <li><a href="talk.php">ibot</a></li><li>/<li>
         <li><a href="edit.php">edit</a></li><li>/<li>
+        <li><a href="auto.php">auto</a></li><li>/<li>
       </ul>
         <div class="userid">
         <ul >
-          <!--<li>USER: <?php echo $_COOKIE['uid'];?></li>-->
+          <li>USER: <?php echo $_COOKIE['uid'];?></li>
           <li><a name="signout" href="../control/sign-out.php">sign-out</a></li>
         </ul>
       </div>
@@ -45,10 +45,13 @@ if(empty($_COOKIE['uid'])){
     <div id="side-menu" class="side-nav">
       <ul id="lst-menu">
         <span>MENU</span>
-        <li><a href="home.php">sensor</a></li>
-        <li><a href="switch.php">switch</a></li>
-        <li><a href="chart.php">live chart</a></li>
-        <li><a href="edit.php">edit</a></li>
+        <li><a href="home.php">sensor </a></li><li>/<li>
+        <li><a href="switch.php">switch</a></li><li>/<li>
+        <li><a href="chart.php">chart</a></li><li>/<li>
+        <li><a href="live.php">live</a></li><li>/<li>
+        <li><a href="talk.php">ibot</a></li><li>/<li>
+        <li><a href="edit.php">edit</a></li><li>/<li>
+        <li><a href="auto.php">auto</a></li><li>/<li>
       </ul>
     </div>
     <div class="creat_box">

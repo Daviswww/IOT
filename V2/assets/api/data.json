@@ -1,73 +1,96 @@
 {
-    "sensor": [
-      {
-        "typeName": "soil_humidity",
-        "name": "泥土濕度",
-        "tmpe": "29",
-        "unit": "％",
-        "id": 1
-      },
-      {
-        "typeName": "air_humidity",
-        "name": "空氣濕度",
-        "tmpe": "68",
-        "unit": "％",
-        "id": 2
-      },
-      {
-        "typeName": "in_temperature",
-        "name": "室內溫度",
-        "tmpe": "26",
-        "unit": "℃",
-        "id": 3
-      },
-      {
-        "typeName": "out_temperature",
-        "name": "室外溫度",
-        "unit": "℃",
-        "id": 4
-      },
-      {
-        "typeName": "rainfall",
-        "name": "降雨量",
-        "unit": "mm",
-        "id": 5
-      },
-      {
-        "typeName": "illumination",
-        "name": "光照度",
-        "unit": "lux",
-        "id": 6
-      }
-    ],
-    "status": [
-      {
-        "order": "0",
-        "typeName": "燈",
-        "name": "客廳",
-        "status": "0",
-        "id": 1
-      },
-      {
-        "order": "1",
-        "typeName": "燈",
-        "name": "廚房",
-        "status": "0",
-        "id": 2
-      },
-      {
-        "order": "2",
-        "typeName": "燈",
-        "name": "車庫",
-        "status": "0",
-        "id": 3
-      },
-      {
-        "order": "3",
-        "typeName": "燈",
-        "name": "走廊",
-        "status": "0",
-        "id": 4
-      }
-    ]
-  }
+  "sensor": [
+    {
+      "order": "0",
+      "typeName": "soil_humidity",
+      "name": "泥土濕度",
+      "tmpe": "0",
+      "unit": "％",
+      "id": 1
+    },
+    {
+      "order": "1",
+      "typeName": "air_humidity",
+      "name": "空氣濕度",
+      "tmpe": "0",
+      "unit": "％",
+      "id": 2
+    },
+    {
+      "order": "2",
+      "typeName": "in_temperature",
+      "name": "室內溫度",
+      "tmpe": "0",
+      "unit": "℃",
+      "id": 3
+    },
+    {
+      "order": "3",
+      "typeName": "out_temperature",
+      "name": "室外溫度",
+      "tmpe": "0",
+      "unit": "℃",
+      "id": 4
+    },
+    {
+      "order": "4",
+      "typeName": "rainfall",
+      "name": "降雨量",
+      "tmpe": "0",
+      "unit": "mm",
+      "id": 5
+    },
+    {
+      "order": "5",
+      "typeName": "illumination",
+      "name": "光照度",
+      "tmpe": "0",
+      "unit": "lux",
+      "id": 6
+    }
+  ],
+  "switch": [
+    {
+      "order": "0",
+      "typeName": "燈",
+      "name": "客廳",
+      "status": "0",
+      "id": 1
+    },
+    {
+      "order": "1",
+      "typeName": "燈",
+      "name": "廚房",
+      "status": 0,
+      "id": 2
+    },
+    {
+      "order": "2",
+      "typeName": "燈",
+      "name": "車庫",
+      "status": 0,
+      "id": 3
+    },
+    {
+      "order": "3",
+      "typeName": "燈",
+      "name": "走廊",
+      "status": 0,
+      "id": 4
+    }
+  ],
+  "auto": [
+    {
+      "order": "0",
+      "name": "客廳燈",
+      "switchOrder": "0",
+      "onSymbol": "<",
+      "onOrder": "0",
+      "onNorm": "25",
+      "offSymbol": ">",
+      "offOrder": "0",
+      "offNorm": "30",
+      "id": 1
+    }
+  ]
+}

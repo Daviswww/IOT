@@ -193,6 +193,8 @@ $(function(){
             }).done(function(res){
                 document.getElementById('ls-tag').innerHTML= res.description;
                 document.getElementById('camera-description').value = res.description;
+                document.getElementById('camera-user').value = res.user;
+                document.getElementById('camera-pwd').value = res.pwd;
                 document.getElementById('camera-id-Number').value = res.id;
                 document.getElementById('camera-ip').value = res.ip;
                 document.getElementById('camera-order').value = res.order;

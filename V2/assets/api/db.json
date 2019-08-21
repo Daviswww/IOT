@@ -95,19 +95,13 @@
   ],
   "camera": [
     {
-      "order": "0",
-      "description": "門口攝影機",
-      "ip": "114.32.99.192",
-      "port": "8082",
-      "type": "video.mjpg",
-      "id": 1
-    },
-    {
       "order": "1",
-      "description": "2",
-      "ip": "3",
-      "port": "4",
-      "type": "5",
+      "description": "E102",
+      "ip": "140.126.20.183",
+      "port": "8080",
+      "type": "video.cgi",
+      "user": "admin",
+      "pwd": "123456",
       "id": 2
     }
   ]

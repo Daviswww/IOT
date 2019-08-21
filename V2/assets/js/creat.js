@@ -56,6 +56,28 @@ $(function(){
     $.ajax({
         type : "GET",
         async : true,
+        url : 'http://'+host+':3000/camera',
+        datatype : 'json',
+        data: {},
+        timeout: 1000,
+        success:function(suc){
+            console.log("Get camera!");
+        },
+        error:function(err){
+            console.log(err);
+        }
+    }).done(function(res){
+        res.forEach(function(camera) {
+            $('.camera-list').append(
+                "<li><a id=\"camera-"+camera.id+"\">"+ camera.description +"</a></li>"
+            );
+        });
+    }).fail(function(err){
+        console.log("camera err!");
+    });
+    $.ajax({
+        type : "GET",
+        async : true,
         url : 'http://'+host+':3000/auto',
         datatype : 'json',
         data: {},
@@ -84,6 +106,8 @@ $(function(){
             document.getElementById('switch-form').style.display = "none";
             document.getElementById('auto-list').style.display = "none";
             document.getElementById('auto-form').style.display = "none";
+            document.getElementById('camera-list').style.display = "none";
+            document.getElementById('camera-form').style.display = "none";  
         }
         else if(val=="switch"){
             document.getElementById('sensor-list').style.display = "none";
@@ -92,6 +116,8 @@ $(function(){
             document.getElementById('switch-form').style.display = "block";
             document.getElementById('auto-list').style.display = "none";
             document.getElementById('auto-form').style.display = "none";
+            document.getElementById('camera-list').style.display = "none";
+            document.getElementById('camera-form').style.display = "none";  
         }
         else if(val=="auto"){
             document.getElementById('sensor-list').style.display = "none";
@@ -100,6 +126,18 @@ $(function(){
             document.getElementById('switch-form').style.display = "none";
             document.getElementById('auto-list').style.display = "block";
             document.getElementById('auto-form').style.display = "block";
+            document.getElementById('camera-list').style.display = "none";
+            document.getElementById('camera-form').style.display = "none";  
+        }
+        else if(val=="camera"){
+            document.getElementById('sensor-list').style.display = "none";
+            document.getElementById('sensor-form').style.display = "none";
+            document.getElementById('switch-list').style.display = "none";
+            document.getElementById('switch-form').style.display = "none";
+            document.getElementById('auto-list').style.display = "none";
+            document.getElementById('auto-form').style.display = "none";
+            document.getElementById('camera-list').style.display = "block";
+            document.getElementById('camera-form').style.display = "block";        
         }
      });
     document.getElementById('sensor-list').addEventListener('click', function(e){
@@ -143,7 +181,28 @@ $(function(){
             })
         }
      }, false);
-
+     document.getElementById('camera-list').addEventListener('click', function(e){
+        if( e.target.tagName.toLowerCase() === 'a' ){
+            $.ajax({
+                type : "GET",
+                async : true,
+                url : 'http://'+host+':3000/camera/'+e.target.id.split("-")[1],
+                datatype : 'json',
+                data: {},
+                timeout: 1000
+            }).done(function(res){
+                document.getElementById('ls-tag').innerHTML= res.description;
+                document.getElementById('camera-description').value = res.description;
+                document.getElementById('camera-id-Number').value = res.id;
+                document.getElementById('camera-ip').value = res.ip;
+                document.getElementById('camera-order').value = res.order;
+                document.getElementById('camera-type').value = res.type;
+                document.getElementById('camera-port').value = res.port;
+            }).fail(function(err){
+                console.log(err);
+            })
+        }
+     }, false);
      document.getElementById('auto-list').addEventListener('click', function(e){
         if( e.target.tagName.toLowerCase() === 'a' ){
             $.ajax({

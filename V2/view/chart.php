@@ -44,14 +44,14 @@ if(empty($_COOKIE['uid'])){
     </nav>	
     <div id="side-menu" class="side-nav">
       <ul id="lst-menu">
-        <span>MENU</span>
-        <li><a href="home.php">sensor </a></li><li>/<li>
-        <li><a href="switch.php">switch</a></li><li>/<li>
-        <li><a href="chart.php">chart</a></li><li>/<li>
-        <li><a href="live.php">live</a></li><li>/<li>
-        <li><a href="talk.php">ibot</a></li><li>/<li>
-        <li><a href="edit.php">edit</a></li><li>/<li>
-        <li><a href="auto.php">auto</a></li><li>/<li>
+      <span>MENU</span>
+        <li><a href="home.php">sensor </a></li>
+        <li><a href="switch.php">switch</a></li>
+        <li><a href="chart.php">chart</a></li>
+        <li><a href="live.php">live</a></li>
+        <li><a href="talk.php">ibot</a></li>
+        <li><a href="edit.php">edit</a></li>
+        <li><a href="auto.php">auto</a></li>
       </ul>
     </div>
     <div class="creat_box">

@@ -42,13 +42,13 @@ if(empty($_COOKIE['uid'])){
     <div id="side-menu" class="side-nav">
       <ul id="lst-menu">
         <span>MENU</span>
-        <li><a href="home.php">sensor </a></li><li>/<li>
-        <li><a href="switch.php">switch</a></li><li>/<li>
-        <li><a href="chart.php">chart</a></li><li>/<li>
-        <li><a href="live.php">live</a></li><li>/<li>
-        <li><a href="talk.php">ibot</a></li><li>/<li>
-        <li><a href="edit.php">edit</a></li><li>/<li>
-        <li><a href="auto.php">auto</a></li><li>/<li>
+        <li><a href="home.php">sensor </a></li>
+        <li><a href="switch.php">switch</a></li>
+        <li><a href="chart.php">chart</a></li>
+        <li><a href="live.php">live</a></li>
+        <li><a href="talk.php">ibot</a></li>
+        <li><a href="edit.php">edit</a></li>
+        <li><a href="auto.php">auto</a></li>
       </ul>
     </div>
     <div class="creat_box">
@@ -57,6 +57,7 @@ if(empty($_COOKIE['uid'])){
           <div id="SelectType" class="type">
             <input type="radio" value="sensor" name="type" checked><label for="sen" >感應器</label>
             <input type="radio" value="switch" name="type"><label for="swi">開關裝置</label>
+            <input type="radio" value="camera" name="type"><label for="cam">攝影機</label>
             <input type="radio" value="auto" name="type"><label for="aut">自動裝置</label>
           </div>
           <div id="drop"class="wrapper-dropdown">
@@ -68,6 +69,8 @@ if(empty($_COOKIE['uid'])){
                     </div>
                     <div id="auto-list" class="auto-list">
                     </div>
+                    <div id="camera-list" class="camera-list">
+                      </div>
                 </ul>
            </div>
           <div id="sensor-form" class="sensor-form">
@@ -76,6 +79,14 @@ if(empty($_COOKIE['uid'])){
             感應器型態:<input id="sensor-type-Name" tpye="text" placeholder="Type Name" value=""><br>
             感應器名字:<input id="sensor-Name" tpye="text" placeholder="Sensor Name" value=""><br>
             感應器單位:<input id="sensor-unit" tpye="text" placeholder="Unit" value=""><br>
+          </div>
+          <div id="camera-form" class="camera-form">
+              攝影機編號:<input id="camera-id-Number" tpye="text" placeholder="ID Number" value=""><br>
+              攝影機順序:<input id="camera-order" tpye="text" placeholder="Order" value=""><br>
+              攝影機說明:<input id="camera-description" tpye="text" placeholder="Camera name" value=""><br>
+              攝影機地址:<input id="camera-ip" tpye="text" placeholder="IP" value=""><br>
+              攝影機阜號:<input id="camera-port" tpye="text" placeholder="Port" value=""><br>
+              攝影機型態:<input id="camera-type" tpye="text" placeholder="Ex:video.mjpg, video.cgi" value=""><br>
           </div>
           <div id="switch-form" class="switch-form">
               開關編號:<input id="switch-id-Number" tpye="text" placeholder="ID Number" value=""><br>

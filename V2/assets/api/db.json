@@ -92,5 +92,23 @@
       "offNorm": "30",
       "id": 1
     }
+  ],
+  "camera": [
+    {
+      "order": "0",
+      "description": "門口攝影機",
+      "ip": "114.32.99.192",
+      "port": "8082",
+      "type": "video.mjpg",
+      "id": 1
+    },
+    {
+      "order": "1",
+      "description": "2",
+      "ip": "3",
+      "port": "4",
+      "type": "5",
+      "id": 2
+    }
   ]
 }

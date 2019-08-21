@@ -32,6 +32,7 @@ $(function(){
             document.getElementById('errmsg').innerHTML= "* "+val+" order is empty!";
             return false;
         } 
+        let ip, port, type;
         let description, switchOrder, onSymbol, onOrder, onNorm, offSymbol, offOrder, offNorm;
         if(val === "sensor" || val === "switch"){
             typeName = $('#'+val+'-form > #'+val+'-type-Name').val().trim();
@@ -51,7 +52,7 @@ $(function(){
                 document.getElementById('errmsg').innerHTML= "* "+val+" name is empty!";
                 return false;
             }            
-        }else{
+        }else if(val==="auto"){
             description = $('#'+val+'-form > #auto-des').val().trim();
             switchOrder = $('#'+val+'-form > #auto-switch-order').val().trim();
             onSymbol = $('#'+val+'-form > #auto-on-Symbol').val().trim();
@@ -74,6 +75,27 @@ $(function(){
             }
             if(!offSymbol || !offOrder || !offNorm){
                 document.getElementById('errmsg').innerHTML= "* "+val+" turn off setting is empty!";
+                return false;
+            }
+        }else if(val === "camera"){
+            description = $('#'+val+'-form > #camera-description').val().trim();
+            ip = $('#'+val+'-form > #camera-ip').val().trim();
+            port = $('#'+val+'-form > #camera-port').val().trim();
+            type = $('#'+val+'-form > #camera-type').val().trim();
+            if(!description){
+                document.getElementById('errmsg').innerHTML= "* "+val+" description is empty!";
+                return false;
+            } 
+            if(!ip){
+                document.getElementById('errmsg').innerHTML= "* "+val+" ip is empty!";
+                return false;
+            } 
+            if(!port){
+                document.getElementById('errmsg').innerHTML= "* "+val+" port is empty!";
+                return false;
+            }
+            if(!type){
+                document.getElementById('errmsg').innerHTML= "* "+val+" type is empty!";
                 return false;
             }
         }
@@ -142,7 +164,29 @@ $(function(){
                     success:function(suc){
                         document.getElementById('errmsg').style.color= "green";
                         document.getElementById('errmsg').innerHTML= "accept new "+val+"!";
-                        $('#sensor-list').append("<li><a id=\"auto-"+suc.id+"\">"+ suc.name +"</a></li>");
+                        $('#auto-list').append("<li><a id=\"auto-"+suc.id+"\">"+ suc.description +"</a></li>");
+                    },
+                    error:function(err){
+                        document.getElementById('errmsg').innerHTML= "* "+val+" post fail!";
+                    }
+                })
+            }
+            else if(val === "camera"){
+                $.ajax({
+                    url:'http://'+host+':3000/'+val,
+                    method:'post',
+                    datatype: 'json', 
+                    data: {
+                        order: order,
+                        description: description,
+                        ip: ip,
+                        port: port,
+                        type: type
+                    },
+                    success:function(suc){
+                        document.getElementById('errmsg').style.color= "green";
+                        document.getElementById('errmsg').innerHTML= "accept new "+val+"!";
+                        $('#camera-list').append("<li><a id=\"auto-"+suc.id+"\">"+ suc.description +"</a></li>");
                     },
                     error:function(err){
                         document.getElementById('errmsg').innerHTML= "* "+val+" post fail!";
@@ -185,7 +229,7 @@ $(function(){
                 document.getElementById('errmsg').innerHTML= "* "+val+" name is empty!";
                 return false;
             }            
-        }else{
+        }else if(val==="auto"){
             description = $('#'+val+'-form > #auto-des').val().trim();
             switchOrder = $('#'+val+'-form > #auto-switch-order').val().trim();
             onSymbol = $('#'+val+'-form > #auto-on-Symbol').val().trim();
@@ -208,6 +252,27 @@ $(function(){
             }
             if(!offSymbol || !offOrder || !offNorm){
                 document.getElementById('errmsg').innerHTML= "* "+val+" turn off setting is empty!";
+                return false;
+            }
+        }else if(val === "camera"){
+            description = $('#'+val+'-form > #camera-description').val().trim();
+            ip = $('#'+val+'-form > #camera-ip').val().trim();
+            port = $('#'+val+'-form > #camera-port').val().trim();
+            type = $('#'+val+'-form > #camera-type').val().trim();
+            if(!description){
+                document.getElementById('errmsg').innerHTML= "* "+val+" description is empty!";
+                return false;
+            } 
+            if(!ip){
+                document.getElementById('errmsg').innerHTML= "* "+val+" ip is empty!";
+                return false;
+            } 
+            if(!port){
+                document.getElementById('errmsg').innerHTML= "* "+val+" port is empty!";
+                return false;
+            }
+            if(!type){
+                document.getElementById('errmsg').innerHTML= "* "+val+" type is empty!";
                 return false;
             }
         }
@@ -247,7 +312,7 @@ $(function(){
                     },
                     success:function(suc){
                         document.getElementById('errmsg').style.color= "green";
-                        document.getElementById('errmsg').innerHTML= "accept new "+val+"!";
+                        document.getElementById('errmsg').innerHTML= "accept update "+val+"!";
                     },
                     error:function(err){
                         document.getElementById('errmsg').innerHTML= "* "+val+" put fail!";
@@ -272,7 +337,28 @@ $(function(){
                     },
                     success:function(suc){
                         document.getElementById('errmsg').style.color= "green";
-                        document.getElementById('errmsg').innerHTML= "accept new "+val+"!";
+                        document.getElementById('errmsg').innerHTML= "accept update "+val+"!";
+                    },
+                    error:function(err){
+                        document.getElementById('errmsg').innerHTML= "* "+val+" put fail!";
+                    }
+                })
+            }
+            else if(val === "camera"){
+                $.ajax({
+                    url:'http://'+host+':3000/'+val,
+                    method:'put',
+                    datatype: 'json', 
+                    data: {
+                        order: order,
+                        description: description,
+                        ip: ip,
+                        port: port,
+                        type: type
+                    },
+                    success:function(suc){
+                        document.getElementById('errmsg').style.color= "green";
+                        document.getElementById('errmsg').innerHTML= "accept update "+val+"!";
                     },
                     error:function(err){
                         document.getElementById('errmsg').innerHTML= "* "+val+" put fail!";

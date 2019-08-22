@@ -32,7 +32,7 @@ $(function(){
             document.getElementById('errmsg').innerHTML= "* "+val+" order is empty!";
             return false;
         } 
-        let ip, port, type;
+        let ip, port, type, user, pwd;
         let description, switchOrder, onSymbol, onOrder, onNorm, offSymbol, offOrder, offNorm;
         if(val === "sensor" || val === "switch"){
             typeName = $('#'+val+'-form > #'+val+'-type-Name').val().trim();
@@ -82,6 +82,8 @@ $(function(){
             ip = $('#'+val+'-form > #camera-ip').val().trim();
             port = $('#'+val+'-form > #camera-port').val().trim();
             type = $('#'+val+'-form > #camera-type').val().trim();
+            user = $('#'+val+'-form > #camera-user').val().trim();
+            pwd = $('#'+val+'-form > #camera-pwd').val().trim();
             if(!description){
                 document.getElementById('errmsg').innerHTML= "* "+val+" description is empty!";
                 return false;
@@ -94,10 +96,20 @@ $(function(){
                 document.getElementById('errmsg').innerHTML= "* "+val+" port is empty!";
                 return false;
             }
+            /*
             if(!type){
                 document.getElementById('errmsg').innerHTML= "* "+val+" type is empty!";
                 return false;
             }
+            if(!user){
+                document.getElementById('errmsg').innerHTML= "* "+val+" username is empty!";
+                return false;
+            }
+            if(!pwd){
+                document.getElementById('errmsg').innerHTML= "* "+val+" password is empty!";
+                return false;
+            }
+            */
         }
 
         if(getV(val, order, id)){
@@ -115,6 +127,7 @@ $(function(){
                         unit: unit
                     },
                     success:function(suc){
+                        
                         document.getElementById('errmsg').style.color= "green";
                         document.getElementById('errmsg').innerHTML= "accept new "+val+"!";
                         $('#sensor-list').append("<li><a id=\"sensors-"+suc.id+"\">"+ suc.name +"</a></li>");
@@ -181,6 +194,8 @@ $(function(){
                         description: description,
                         ip: ip,
                         port: port,
+                        user:user,
+                        pwd:pwd,
                         type: type
                     },
                     success:function(suc){

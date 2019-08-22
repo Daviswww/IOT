@@ -11,7 +11,7 @@ $(function(){
                     msg : e.target.id
                 },
                 success:function(res){
-                  console.log('hey');  
+                  console.log(e.target.id);  
                 },
                 error:function(err){
                     console.log('publish fail!');

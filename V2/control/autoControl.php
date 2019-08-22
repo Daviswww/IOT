@@ -1,7 +1,7 @@
 <?php
-include 'D:\XAMPP\htdocs\IOT\V2\module\jsonServer.php';
-include 'D:\XAMPP\htdocs\IOT\V2\module\mqttGet.php';
-echo "Hello World!";
+include '../module/jsonServer.php';
+include '../module/mqttGet.php';
+echo "Start!\n";
 
 $time = 0;
 $statusUrl = 'status';
@@ -14,7 +14,7 @@ $auto = json_decode($json->get($autoUrl));
 while(true)
 {
     if($time==60){
-        echo 'json get';
+        echo "GET 200 json server\n";
         $time = 0;
         $auto = json_decode($json->get($autoUrl));
     }
@@ -65,5 +65,6 @@ while(true)
         }  
     }
     $time+=1;
+    echo "GET 200 AUTO #$time\n";
     sleep(1);
 }

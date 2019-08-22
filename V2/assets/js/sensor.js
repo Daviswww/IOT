@@ -5,7 +5,7 @@ $(function(){
         res['sensor'].forEach(function(sensors) {
             $('#container').append(
             "<div class=\"A\">"+
-                "<div class=\"B\">"+
+                "<div id =\"c"+sensors.order+"\" class=\"B\">"+
                     "<p class=\"bj kk\" id=\"s"+(sensors.order)+"\">"+sensors.tmpe+"</p><p class=\"bj kk\">"+sensors.unit+"</p>"+
                 "</div>"+
                 "<div class=\"C\">"+
@@ -16,11 +16,14 @@ $(function(){
     }).done(function(res){
         console.log('Sensor ready!');
     });
-
     function showData(){
         $.getJSON('../assets/api/sensor.php', function(data) { 
             for(var i = 0; i <= Object.keys(data).length-2; i++){
+                if(data['s'+i] == null){
+                    break;
+                }
                 $("#s"+i).html(data['s'+i]);
+                document.getElementById('c'+i).style.background = "#4eac78";
             };
         })
     }

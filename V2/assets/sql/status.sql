@@ -31,10 +31,27 @@ SET time_zone = "+00:00";
 CREATE TABLE `status` (
   `id` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `s0` int(5) NOT NULL,
-  `s1` int(5) NOT NULL,
-  `s2` int(5) NOT NULL,
-  `s3` int(5) NOT NULL
+  `s0` int(5),
+  `s1` int(5),
+  `s2` int(5),
+  `s3` int(5),
+  `s4` int(5),
+  `s5` int(5),
+  `s6` int(5),
+  `s7` int(5),
+  `s8` int(5),
+  `s9` int(5),
+  `s10` int(5),
+  `s11` int(5),
+  `s12` int(5),
+  `s13` int(5),
+  `s14` int(5),
+  `s15` int(5),
+  `s16` int(5),
+  `s17` int(5),
+  `s18` int(5),
+  `s19` int(5),
+  `s20` int(5)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

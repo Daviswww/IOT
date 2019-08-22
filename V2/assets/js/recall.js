@@ -23,13 +23,13 @@ $(function(){
             data: {
                 msg: transcript
             },
-            error: function(xhr) {
-                document.getElementById('bot-pc').innerHTML = 'Alice: 請再說一遍';
-                console.log("recall error");
-            },
             success: function(response) {
                 document.getElementById('bot-pc').innerHTML = 'Alice: 接收到命令!';
                 console.log('liv:'+response);
+            },
+            error: function(xhr) {
+                document.getElementById('bot-pc').innerHTML = 'Alice: 請再說一遍';
+                console.log("recall error");
             }
         });
         

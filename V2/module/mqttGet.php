@@ -1,6 +1,6 @@
 <?php
-include 'D:/XAMPP/htdocs/IOT/V2/module/dbGet.php';
-include 'D:/XAMPP/htdocs/IOT/V2/includes/mqtt.inc.php';
+include '../module/dbGet.php';
+include '../includes/mqtt.inc.php';
 
 class Mqttget extends Mqtt
 {
@@ -40,9 +40,10 @@ function procmsg($topic, $msg)
     $conn = new Dbget();
     try{
         $conn->getINSdata($topic, $msg); 
+        echo "GET 200 $topic $msg\n";
     }
     catch(Exception $err){
-        echo $topic . "error!";
+        echo "GET 500 $topic\n";
     }
 }
 

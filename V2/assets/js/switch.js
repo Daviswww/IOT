@@ -4,7 +4,7 @@ $(function(){
         res['switch'].forEach(function(switchs) {
             $('#container').append(
                 "<div  class=\"A\">"+
-                "<div class=\"B\">"+
+                "<div id =\"c"+switchs.order+"\" class=\"B\">"+
                     "<p class=\"D\">"+switchs.name+switchs.typeName+"</p>"+
                     "<p id=\"s"+switchs.order+"\">Loding...</p>"+
                 "</div>"+
@@ -21,7 +21,11 @@ $(function(){
     function showData(){
         $.getJSON("../assets/api/status.php", function(data){
             for(var i = 0; i < Object.keys(data).length-2; i++){
-                $("#s"+i).html((data['s'+i] == "1"? "OFF":"ON"));
+                if(data['s'+i] == null){
+                    break;
+                }
+                $("#s"+i).html((data['s'+i] == "1"? "ON":"OFF"));
+                document.getElementById('c'+i).style.background = "#4eac78";
             }
         });
     }

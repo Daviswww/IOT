@@ -1,39 +1,65 @@
+var host = "localhost";
+var talk, sa;
 $(function(){
     const btn = document.querySelector('#msg-talk');
     const content = document.querySelector('#bot-user');
-
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
-
+    
     recognition.onstart = function(){
         console.log('voice is activated.');
     };
 
     recognition.onresult = function(event){
         console.log(event);
+        
         const current = event.resultIndex;
         const transcript = event.results[current][0].transcript;
         content.textContent = transcript;
         document.getElementById('bot-user').innerHTML = 'User: '+transcript;
         $.ajax({         
-            url: '../control/pubControl.php',
+            url: 'http://'+host+':3000/switch',
             cache: false,
             dataType: 'json',
-            type:'POST',
-            data: {
-                msg: transcript
-            },
-            success: function(response) {
-                document.getElementById('bot-pc').innerHTML = 'Alice: 接收到命令!';
-                console.log('liv:'+response);
-            },
-            error: function(xhr) {
-                document.getElementById('bot-pc').innerHTML = 'Alice: 請再說一遍';
-                console.log("recall error");
+            type:'GET',
+            success: function(res) {
+                sa = false;
+                res.forEach(function(switchs) {
+                    if(transcript.match(switchs.typeName) && transcript.match(switchs.name)){
+                        if(transcript.match("關")){
+                            talk =  'f'+switchs.order;
+                        }
+                        else if(transcript.match("開")){
+                            talk =  'n'+switchs.order;
+                        }
+                        $.ajax({         
+                            url: '../control/pubControl.php',
+                            cache: true,
+                            dataType: 'text',
+                            type:'POST',
+                            data: {
+                                msg: talk
+                            },
+                            success: function(response) {
+                                document.getElementById('bot-pc').innerHTML = 'Alice: 接收到命令!';
+                            },
+                            error: function(xhr) {
+                                document.getElementById('bot-pc').innerHTML = 'Alice: 伺服器失火啦!!!';
+                                console.log("recall error");
+                            }
+                        });
+                        sa = true;
+                        return true;
+                    }
+                });
+                if(!sa){
+                    document.getElementById('bot-pc').innerHTML = 'Alice: 人家找不到那開關啦QQ!!!';
+                }
             }
+        }).done(function(res){
+            console.log('voice is done!');
         });
-        
-        //window.location.href = 'https://192.168.1.6/IOT/V2/control/pubControl.php?&msg=' + transcript;
+        talk="";
         console.log(transcript);
         readOutLoud(transcript);
     };

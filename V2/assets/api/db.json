@@ -47,6 +47,14 @@
       "tmpe": "0",
       "unit": "lux",
       "id": 6
+    },
+    {
+      "order": "7",
+      "typeName": "qweqwe",
+      "name": "光照",
+      "tmpe": "0",
+      "unit": "lux",
+      "id": 7
     }
   ],
   "switch": [
@@ -84,6 +92,13 @@
       "name": "大",
       "status": "0",
       "id": 5
+    },
+    {
+      "order": "6",
+      "typeName": "燈",
+      "name": "二樓",
+      "status": "0",
+      "id": 6
     }
   ],
   "auto": [

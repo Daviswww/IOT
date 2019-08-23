@@ -29,13 +29,13 @@ while(true)
                 $msg = "n" . $auto[$i]->{'switchOrder'};
                 $mqtt->publish($msg);
             }
-            if(($auto[$i]->{'onSymbol'} == '=') && 
+            else if(($auto[$i]->{'onSymbol'} == '=') && 
             ($switch['s' . $auto[$i]->{'switchOrder'}] == 0) &&
             ($sensor['s' . $auto[$i]->{'onOrder'}] == (int)$auto[$i]->{'onNorm'})){
                 $msg = "n" . $auto[$i]->{'switchOrder'};
                 $mqtt->publish($msg);
             }
-            if(($auto[$i]->{'onSymbol'} == '<') &&
+            else if(($auto[$i]->{'onSymbol'} == '<') &&
             ($switch['s' . $auto[$i]->{'switchOrder'}] == 0) &&
             ($sensor['s' . $auto[$i]->{'onOrder'}] < (int)$auto[$i]->{'onNorm'})){
                 $msg = "n" . $auto[$i]->{'switchOrder'};
@@ -48,13 +48,13 @@ while(true)
                 $msg = "f" . $auto[$i]->{'switchOrder'};
                 $mqtt->publish($msg);
             }
-            if(($auto[$i]->{'offSymbol'} == '=') && 
+            else if(($auto[$i]->{'offSymbol'} == '=') && 
             ($switch['s' . $auto[$i]->{'switchOrder'}] == 1) &&
             ($sensor['s' . $auto[$i]->{'offOrder'}] == (int)$auto[$i]->{'offNorm'})){
                 $msg = "f" . $auto[$i]->{'switchOrder'};
                 $mqtt->publish($msg);
             }
-            if(($auto[$i]->{'offSymbol'} == '<') &&
+            else if(($auto[$i]->{'offSymbol'} == '<') &&
             ($switch['s' . $auto[$i]->{'switchOrder'}] == 1) &&
             ($sensor['s' . $auto[$i]->{'offOrder'}] < (int)$auto[$i]->{'offNorm'})){
                 $msg = "f" . $auto[$i]->{'switchOrder'};

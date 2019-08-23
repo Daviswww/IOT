@@ -1,18 +1,24 @@
 var host = "localhost";
 $(function(){
     setInterval(function(){ showData(); } ,1000);
-    $.getJSON('../assets/api/db.json', function(res) { 
-        res['sensor'].forEach(function(sensors) {
-            $('#container').append(
-            "<div class=\"A\">"+
-                "<div id =\"c"+sensors.order+"\" class=\"B\">"+
-                    "<p class=\"bj kk\" id=\"s"+(sensors.order)+"\">"+sensors.tmpe+"</p><p class=\"bj kk\">"+sensors.unit+"</p>"+
-                "</div>"+
-                "<div class=\"C\">"+
-                "<p>"+sensors.name+"</p>"+
-                "</div>"+
-            "</div>");
-        });
+    $.ajax({         
+        url: 'http://'+host+':3000/sensor',
+        cache: false,
+        dataType: 'json',
+        type:'GET',
+        success: function(res) {
+            res.forEach(function(sensors) {
+                $('#container').append(
+                "<div class=\"A\">"+
+                    "<div id =\"c"+sensors.order+"\" class=\"B\">"+
+                        "<p class=\"bj kk\" id=\"s"+(sensors.order)+"\">"+sensors.tmpe+"</p><p class=\"bj kk\">"+sensors.unit+"</p>"+
+                    "</div>"+
+                    "<div class=\"C\">"+
+                    "<p>"+sensors.name+"</p>"+
+                    "</div>"+
+                "</div>");
+            });
+        }
     }).done(function(res){
         console.log('Sensor ready!');
     });

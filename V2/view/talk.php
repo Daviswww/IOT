@@ -1,3 +1,9 @@
+<?php
+if(empty($_COOKIE['uid'])){
+  header("Location: ../index.php?loginXerror");
+}
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -45,12 +51,12 @@
         <div class="bot-t">
             <div class="bot-p">
                 <div id="bot-pc">
-                    Alice: 123
+                    Alice: 
                 </div>
             </div>
             <div class="bot-p">
                 <div id="bot-user">
-                    User: 321
+                    User: 
                 </div>
             </div>
             <div class="bot-y">

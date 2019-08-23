@@ -1,3 +1,4 @@
+
 <?php
 if(empty($_COOKIE['uid'])){
   header("Location: ../index.php?loginXerror");

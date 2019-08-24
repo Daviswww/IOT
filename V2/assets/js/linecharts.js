@@ -34,7 +34,7 @@ $(function(){
                                                         activeLastPointToolip(chart);                                                        
                                                 }
                                                 catch(err){
-                                                        console.log('hey');
+                                                        console.log('server error!');
                                                 }
 
                                         });                       

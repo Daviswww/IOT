@@ -1,0 +1,4 @@
+--host 192.168.1.XXX
+start json-server D:\XAMPP\htdocs\IOT\V2\assets\api\db.json
+start php D:\XAMPP\htdocs\IOT\V2\control\mqttSub.php
+start php D:\XAMPP\htdocs\IOT\V2\control>php autoControl.php

@@ -107,6 +107,7 @@ if(empty($_COOKIE['uid'])){
             開啟設定:
             <select id="auto-on-Order">
               <option  value="" disabled selected hidden>感應器</option>
+              <option value="date">時間</option>
             </select>
             <select id="auto-on-Symbol">
                 <option value="" disabled selected hidden>比較運算子</option>
@@ -114,10 +115,11 @@ if(empty($_COOKIE['uid'])){
                 <option value="<">小於 (<)</option>
                 <option value="=">等於 (==)</option>
             </select>
-            <input id="auto-on-Norm" tpye="text" placeholder="Norm" value=""><br>
+            <input id="auto-on-Norm" tpye="text" placeholder="time->Ex.14:10 or 23:19... sensor->Ex.10 or 100..." value=""><br>
             關閉設定:
             <select id="auto-off-Order">
               <option value="" disabled selected hidden>感應器</option>
+              <option value="date">時間</option>
             </select>
             <select id="auto-off-Symbol">
                 <option value="" disabled selected hidden>比較運算子</option>
@@ -125,7 +127,7 @@ if(empty($_COOKIE['uid'])){
                 <option value="<">小於 (<)</option>
                 <option value="=">等於 (==)</option>
             </select>
-            <input id="auto-off-Norm" tpye="text" placeholder="Norm" value=""><br>
+            <input id="auto-off-Norm" tpye="text" placeholder="time->Ex.14:10 or 23:19... sensor->Ex.10 or 100..." value=""><br>
           </div>
           <div id="errmsg" class="errmsg"></div>
           <div class="bt-box">

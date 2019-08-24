@@ -91,7 +91,7 @@ $(function(){
     }).done(function(res){
         res.forEach(function(auto) {
             $('.auto-list').append(
-                "<li><a id=\"autos-"+auto.id+"\">"+ auto.description +"</a></li>"
+                "<li><a id=\"auto-"+auto.id+"\">"+ auto.description +"</a></li>"
             );
         });
     }).fail(function(err){

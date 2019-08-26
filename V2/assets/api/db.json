@@ -101,22 +101,22 @@
       "switchOrder": "1",
       "onSymbol": ">",
       "onOrder": "0",
-      "onNorm": "65",
+      "onNorm": "80",
       "offSymbol": "<",
       "offOrder": "0",
-      "offNorm": "65",
+      "offNorm": "70",
       "id": 1
     },
     {
       "order": "1",
       "description": "走廊燈",
       "switchOrder": "4",
-      "onSymbol": ">",
+      "onSymbol": "=",
       "onOrder": "date",
-      "onNorm": "17:00",
-      "offSymbol": "<",
+      "onNorm": "16:36",
+      "offSymbol": "=",
       "offOrder": "date",
-      "offNorm": "20:00",
+      "offNorm": "18:00",
       "id": 2
     }
   ],

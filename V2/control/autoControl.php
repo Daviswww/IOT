@@ -23,11 +23,11 @@ while(true)
         $time = 0;
         $auto = json_decode($json->get($autoUrl));
         if($now > strtotime($date)){
-            $date = date("Y-m-d",(time()+6*3600));
             $path = $date . "csv";
             $get->outOfCsv(($path ."sensor/". $date . ".csv"), 'sensor');
             $get->outOfCsv(($path ."status/". $date . ".csv"), 'status');
             echo "Save csv done!\n";
+            $date = date("Y-m-d",(time()+6*3600));
         }
     }
     if($date){

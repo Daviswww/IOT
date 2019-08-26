@@ -23,11 +23,11 @@ if(empty($_COOKIE['uid'])){
     <nav class="nav-main">
   	  <ul>
         <li><div id="sidebar" name="btn"></div>
-        <li><a href="home.php">sensor</a></li><li>/<li>
+        <li><a href="home.php">sensor </a></li><li>/<li>
         <li><a href="switch.php">switch</a></li><li>/<li>
-        <li><a href="chart.php">live</a></li><li>/<li>
         <li><a href="chart.php">chart</a></li><li>/<li>
-        <li><a href="talk.php">ibot</a></li><li>/<li>
+        <li><a href="live.php">live</a></li><li>/<li>
+        <li><a href="talk.php">qsbot</a></li><li>/<li>
         <li><a href="edit.php">edit</a></li><li>/<li>
         <li><a href="auto.php">auto</a></li><li>/<li>
       </ul>

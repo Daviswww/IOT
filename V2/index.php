@@ -28,7 +28,7 @@
       <div class="tab-content">
         <!--sign-IN-->
         <div id="login">   
-          <h1>Welcome Back!</h1>
+          <h1>Welcome to QSTalk!</h1>
           <form action="control/regControl.php" method="post">
             <div class="field-wrap">
             <label>
@@ -44,7 +44,7 @@
             <input name="user_password" type="password"required autocomplete="off"/>
           </div>
           
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
+          <!--<p class="forgot"><a href="#">Forgot Password?</a></p>-->
           
           <button name="signin" class="button button-block">SIGN-IN</button>
           

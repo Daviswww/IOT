@@ -24,7 +24,7 @@ if(empty($_COOKIE['uid'])){
         <li><a href="switch.php">switch</a></li><li>/<li>
         <li><a href="chart.php">chart</a></li><li>/<li>
         <li><a href="live.php">live</a></li><li>/<li>
-        <li><a href="talk.php">ibot</a></li><li>/<li>
+        <li><a href="talk.php">qsbot</a></li><li>/<li>
         <li><a href="edit.php">edit</a></li><li>/<li>
         <li><a href="auto.php">auto</a></li><li>/<li>
       </ul>

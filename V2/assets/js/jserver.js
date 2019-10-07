@@ -225,6 +225,7 @@ $(function(){
             document.getElementById('errmsg').innerHTML= "* "+val+" order is empty!";
             return false;
         } 
+        let ip, port, type, user, pwd;
         let description, switchOrder, onSymbol, onOrder, onNorm, offSymbol, offOrder, offNorm;
         if(val === "sensor" || val === "switch"){
             typeName = $('#'+val+'-form > #'+val+'-type-Name').val().trim();
@@ -274,6 +275,9 @@ $(function(){
             ip = $('#'+val+'-form > #camera-ip').val().trim();
             port = $('#'+val+'-form > #camera-port').val().trim();
             type = $('#'+val+'-form > #camera-type').val().trim();
+            user = $('#'+val+'-form > #camera-user').val().trim();
+            pwd = $('#'+val+'-form > #camera-pwd').val().trim();
+            
             if(!description){
                 document.getElementById('errmsg').innerHTML= "* "+val+" description is empty!";
                 return false;
@@ -361,7 +365,7 @@ $(function(){
             }
             else if(val === "camera"){
                 $.ajax({
-                    url:'http://'+host+':3000/'+val,
+                    url:'http://'+host+':3000/'+val+'/'+id,
                     method:'put',
                     datatype: 'json', 
                     data: {
@@ -369,6 +373,8 @@ $(function(){
                         description: description,
                         ip: ip,
                         port: port,
+                        user:user,
+                        pwd:pwd,
                         type: type
                     },
                     success:function(suc){

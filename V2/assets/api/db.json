@@ -96,18 +96,6 @@
   ],
   "auto": [
     {
-      "order": "0",
-      "description": "客廳燈",
-      "switchOrder": "1",
-      "onSymbol": ">",
-      "onOrder": "0",
-      "onNorm": "80",
-      "offSymbol": "<",
-      "offOrder": "0",
-      "offNorm": "70",
-      "id": 1
-    },
-    {
       "order": "1",
       "description": "走廊燈",
       "switchOrder": "4",

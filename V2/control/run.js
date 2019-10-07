@@ -1,16 +1,16 @@
 var exec = require("child_process").exec;
 
-exec("php mqttSub.php", 
+exec("start php mqttSub.php", 
 function (error, stdout, stderr) {
     console.log(stdout.toString('utf8'));
 });
 
-exec("json-server ../assets/api/db.json", 
+exec("start json-server ../assets/api/db.json", 
 function (error, stdout, stderr) {
     console.log(stdout.toString('utf8'));
 });
 
-exec("php autoControl.php", 
+exec("start php autoControl.php", 
 function (error, stdout, stderr) {
     console.log(stdout.toString('utf8'));
 });

@@ -48,6 +48,7 @@ if(empty($_COOKIE['uid'])){
         <li><a href="auto.php">auto</a></li>
       </ul>
     </div>
+
     <div class="inside">
       <div id="container" class="container">
 

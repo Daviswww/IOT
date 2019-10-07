@@ -12,7 +12,7 @@
   <title>Sign-Up/Login Form</title>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
-    <link rel="sty  lesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
       <link rel="stylesheet" href="assets/css/login.css">
 </head>
 

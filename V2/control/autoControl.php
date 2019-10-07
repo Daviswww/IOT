@@ -30,9 +30,6 @@ while(true)
             $date = date("Y-m-d",(time()+6*3600));
         }
     }
-    if($date){
-
-    }
     for($i = 0; $i < sizeof($auto); $i++){
         try{
             //switch on

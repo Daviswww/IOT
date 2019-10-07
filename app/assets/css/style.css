@@ -15,14 +15,35 @@ body{
 
 .main .box1{
 	font-family: Arial, Helvetica, sans-serif;
-	background-color: rgb(41, 150, 64);
+	background-color: rgb(104, 104, 104);
 	padding: 10px 10px;
 	height: 80px;
 	width: 100%;
 }
 
 .main .box1 .temp{
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 21px;
-	background-color: black;
+	background-color: rgb(255, 255, 255);
 	padding: 10px 10px;
+	box-shadow:2px 2px 2px;
+}
+.main .box1 .temp .num{
+	display: inline;
+}
+.main .box1 .temp .btn{
+	float: right;
+}
+.main .box1 .temp .btn .bton{
+	right: 0;
+	display:inline;
+	margin-left: 20px;
+	background-size: auto;
+	background-color: aliceblue;
+}
+.main .box1 .temp .btn .btoff{
+	right: 0;
+	display:inline;
+	margin-left: 20px;
+	background-color: aliceblue;
 }

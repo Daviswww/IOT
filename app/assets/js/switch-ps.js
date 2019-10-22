@@ -21,7 +21,7 @@ $(function(){
                     msg : id
                 },
                 success:function(res){
-                  console.log(id);  
+                  //console.log(id);  
                 },
                 error:function(err){
                     console.log('publish fail!');
@@ -29,6 +29,5 @@ $(function(){
             });              
         }
     });
-    
     //document.getElementById("switch1").click();
 });

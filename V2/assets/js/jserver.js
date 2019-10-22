@@ -130,7 +130,7 @@ $(function(){
                         
                         document.getElementById('errmsg').style.color= "green";
                         document.getElementById('errmsg').innerHTML= "accept new "+val+"!";
-                        $('#sensor-list').append("<li><a id=\"sensors-"+suc.id+"\">"+ suc.name +"</a></li>");
+                        $('#sensor-list').append("<li><a id=\"sensors-"+suc.id+"\">"+suc.order+". "+ suc.name +"</a></li>");
                     },
                     error:function(err){
                         document.getElementById('errmsg').innerHTML= "* "+val+" post fail!";
@@ -151,7 +151,7 @@ $(function(){
                     success:function(suc){
                         document.getElementById('errmsg').style.color= "green";
                         document.getElementById('errmsg').innerHTML= "accept new "+val+"!";
-                        $('#sensor-list').append("<li><a id=\"switch-"+suc.id+"\">"+ suc.name +"</a></li>");
+                        $('#switch-list').append("<li><a id=\"switch-"+suc.id+"\">"+suc.order+". "+ suc.name +"</a></li>");
                     },
                     error:function(err){
                         document.getElementById('errmsg').innerHTML= "* "+val+" post fail!";
@@ -177,7 +177,7 @@ $(function(){
                     success:function(suc){
                         document.getElementById('errmsg').style.color= "green";
                         document.getElementById('errmsg').innerHTML= "accept new "+val+"!";
-                        $('#auto-list').append("<li><a id=\"auto-"+suc.id+"\">"+ suc.description +"</a></li>");
+                        $('#auto-list').append("<li><a id=\"auto-"+suc.id+"\">"+suc.order+". "+ suc.description +"</a></li>");
                     },
                     error:function(err){
                         document.getElementById('errmsg').innerHTML= "* "+val+" post fail!";
@@ -201,7 +201,7 @@ $(function(){
                     success:function(suc){
                         document.getElementById('errmsg').style.color= "green";
                         document.getElementById('errmsg').innerHTML= "accept new "+val+"!";
-                        $('#camera-list').append("<li><a id=\"auto-"+suc.id+"\">"+ suc.description +"</a></li>");
+                        $('#camera-list').append("<li><a id=\"auto-"+suc.id+"\">"+suc.order+". "+ suc.description +"</a></li>");
                     },
                     error:function(err){
                         document.getElementById('errmsg').innerHTML= "* "+val+" post fail!";

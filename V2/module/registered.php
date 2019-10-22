@@ -81,19 +81,65 @@ class registered extends Dbh{
                 } 
                 elseif ($hashedPwdCheck == true) 
                 {
-                    //set cookie time
-                    setcookie("uid", $this->uid, time() + (86400 * 30), "/");
-                    header("Location: ../view/home.php?login=success");
+                    return true;
                     exit();
                 }
             }
         }
     }
+
     public function signout(){
+        //set cookie time
         session_unset();
         session_destroy();
-        setcookie("uid", "", time() - (86400 * 30), "/");
+        setcookie("pv", "", time() - (86400 * 30), "/");
+        setcookie("pu", "", time() - (86400 * 30), "/");
         header("Location: ../index.php");
         exit();
     }
+
+    public function signinApp($uid, $psw)
+    {
+        $this->uid = $uid;
+        $this->psw = $psw;
+    
+        //Error handlers
+
+        $sql = "SELECT * FROM users WHERE users_id='$this->uid' OR users_email='$this->uid'";
+        $result = $this->connect()->query($sql);
+        $numRows = $result->num_rows;
+        if ($numRows < 1) 
+        {
+            header("Location: ../index.php?login=rowError");
+            exit();
+        } 
+        else 
+        {
+            if ($row = $result->fetch_assoc())
+            {
+                //De-hashing the paswrd
+                $hashedPwdCheck = password_verify($this->psw, $row['users_psw']);
+                if ($hashedPwdCheck == false) 
+                {
+                    header("Location: ../index.php?login=error");
+                    exit();
+                } 
+                elseif ($hashedPwdCheck == true) 
+                {
+                    return true;
+                    exit();
+                }
+            }
+        }
+    }
+
+    public function signoutApp(){
+        //set cookie time
+        session_unset();
+        session_destroy();
+        setcookie("pv", "", time() - (86400 * 30), "/");
+        setcookie("pu", "", time() - (86400 * 30), "/");
+        header("Location: ../../app/index.php");
+        exit();
+    }    
 }

@@ -16,7 +16,7 @@ $(function(){
     }).done(function(res){
         res.forEach(function(sensors) {
             $('.sensor-list').append(
-                "<li><a id=\"sensor-"+sensors.id+"\">"+ sensors.name +"</a></li>"
+                "<li><a id=\"sensor-"+sensors.id+"\">"+sensors.order+". "+ sensors.name +"</a></li>"
             );
             $('#auto-on-Order').append(
                 "<option value=\""+sensors.order+"\">"+sensors.name +"</option>"
@@ -44,7 +44,7 @@ $(function(){
     }).done(function(res){
         res.forEach(function(switchs) {
             $('.switch-list').append(
-                "<li><a id=\"switch-"+switchs.id+"\">"+ switchs.name+switchs.typeName +"</a></li>"
+                "<li><a id=\"switch-"+switchs.id+"\">"+switchs.order+". "+ switchs.name+switchs.typeName +"</a></li>"
             );
             $('#auto-switch-order').append(
                 "<option value=\""+switchs.order+"\">"+switchs.name+switchs.typeName+"</option>"
@@ -69,7 +69,7 @@ $(function(){
     }).done(function(res){
         res.forEach(function(camera) {
             $('.camera-list').append(
-                "<li><a id=\"camera-"+camera.id+"\">"+ camera.description +"</a></li>"
+                "<li><a id=\"camera-"+camera.id+"\">"+camera.order+". "+ camera.description +"</a></li>"
             );
         });
     }).fail(function(err){
@@ -91,7 +91,7 @@ $(function(){
     }).done(function(res){
         res.forEach(function(auto) {
             $('.auto-list').append(
-                "<li><a id=\"auto-"+auto.id+"\">"+ auto.description +"</a></li>"
+                "<li><a id=\"auto-"+auto.id+"\">"+ auto.order +". "+auto.description +"</a></li>"
             );
         });
     }).fail(function(err){

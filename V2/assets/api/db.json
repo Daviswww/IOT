@@ -55,6 +55,14 @@
       "tmpe": "0",
       "unit": "lux",
       "id": 7
+    },
+    {
+      "order": "6",
+      "typeName": "in_temperature_TEST",
+      "name": "室內溫度T",
+      "tmpe": "0",
+      "unit": "℃",
+      "id": 8
     }
   ],
   "switch": [
@@ -92,6 +100,27 @@
       "name": "大",
       "status": "0",
       "id": 5
+    },
+    {
+      "order": "5",
+      "typeName": "燈",
+      "name": "二樓",
+      "status": "0",
+      "id": 6
+    },
+    {
+      "order": "6",
+      "typeName": "燈",
+      "name": "二樓大廳",
+      "status": "0",
+      "id": 7
+    },
+    {
+      "order": "7",
+      "typeName": "燈",
+      "name": "二樓室外",
+      "status": "0",
+      "id": 8
     }
   ],
   "auto": [

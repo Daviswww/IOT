@@ -81,6 +81,7 @@ class registered extends Dbh{
                 } 
                 elseif ($hashedPwdCheck == true) 
                 {
+                    setcookie("uid", $this->uid, time() + (86400 * 30), "/");
                     return true;
                     exit();
                 }
@@ -92,6 +93,7 @@ class registered extends Dbh{
         //set cookie time
         session_unset();
         session_destroy();
+        setcookie("uid", "", time() - (86400 * 30), "/");
         setcookie("pv", "", time() - (86400 * 30), "/");
         setcookie("pu", "", time() - (86400 * 30), "/");
         header("Location: ../index.php");
@@ -126,6 +128,7 @@ class registered extends Dbh{
                 } 
                 elseif ($hashedPwdCheck == true) 
                 {
+                    setcookie("uid", $this->uid, time() + (86400 * 30), "/");
                     return true;
                     exit();
                 }
@@ -137,6 +140,7 @@ class registered extends Dbh{
         //set cookie time
         session_unset();
         session_destroy();
+        setcookie("uid", "", time() - (86400 * 30), "/");
         setcookie("pv", "", time() - (86400 * 30), "/");
         setcookie("pu", "", time() - (86400 * 30), "/");
         header("Location: ../../app/index.php");

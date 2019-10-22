@@ -38,7 +38,7 @@ if(isset($_POST['signin'])){
             setcookie("pu", $pukey, time() + (86400 * 30), "/");
             setcookie($pvkey, $token, time() + (86400 * 30), "/");
             setcookie($pukey, $token, time() + (86400 * 30), "/");
-            header("Location: ../view/a.php");
+            header("Location: ../view/home.php");
         }
     }
 }

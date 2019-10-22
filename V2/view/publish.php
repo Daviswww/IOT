@@ -1,6 +1,6 @@
 <?php
-if(empty($_COOKIE['uid'])){
-    header("Location: ../index.php?loginXerror");
+if($_COOKIE[$_COOKIE['pv']]!=$_COOKIE[$_COOKIE['pu']]){
+  header("Location: ../index.php?login-error");
 }
 ?>
 
@@ -34,7 +34,7 @@ if(empty($_COOKIE['uid'])){
         <h1>
           Hello World2!
         </h1>
-        <img style="-webkit-user-select: none;" src="http://140.126.20.95/video.cgi?&user=admin&pwd=123456" width="320" height="240">
+        <img style="-webkit-user-select: none;" src="http://140.126.20.183:8080/video.cgi?&user=admin&pwd=123456" width="320" height="240">
         <form action = "../control/pubControl.php" method="POST">
         	MSG:
             <input type="text" name="msg"><br>

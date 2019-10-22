@@ -59,11 +59,11 @@ class Dbshow extends Dbget
 		$datas = $this->getLSTdata();
 		echo "<table>";
 		echo "<tr>";
-		echo "<td>date</td>";
-		echo "<td>name</td>";
-		echo "<td>cost</td>";
-		echo "<td>attack</td>";
-		echo "<td>defense</td>";
+		echo "<td>soil_humidity</td>";
+		echo "<td>soil_humidity</td>";
+		echo "<td>soil_humidity</td>";
+		echo "<td>soil_humidity</td>";
+		echo "<td>soil_humidity</td>";
 		echo "</tr>";
 		if(is_array($datas))
 		{
@@ -73,10 +73,10 @@ class Dbshow extends Dbget
 				{
 					echo "<tr>";
 					echo "<td>" . $data['date'] . "</td>";
-					echo "<td>" . $data['cardname'] . "</td>";
-					echo "<td>" . $data['cost'] . "</td>";
-					echo "<td>" . $data['attack'] . "</td>";
-					echo "<td>" . $data['defense'] . "</td>";
+					echo "<td>" . $data['soil_humidity'] . "</td>";
+					echo "<td>" . $data['soil_humidity'] . "</td>";
+					echo "<td>" . $data['soil_humidity'] . "</td>";
+					echo "<td>" . $data['soil_humidity'] . "</td>";
 					echo "</tr>";
 				}
 			}

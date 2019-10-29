@@ -2,24 +2,24 @@
   "sensor": [
     {
       "order": "0",
-      "typeName": "soil_humidity",
-      "name": "泥土濕度",
+      "typeName": "illumination",
+      "name": "光照",
       "tmpe": "0",
-      "unit": "％",
+      "unit": "lux",
       "id": 1
     },
     {
       "order": "1",
-      "typeName": "air_humidity",
-      "name": "空氣濕度",
+      "typeName": "humidity",
+      "name": "濕度",
       "tmpe": "0",
       "unit": "％",
       "id": 2
     },
     {
       "order": "2",
-      "typeName": "in_temperature",
-      "name": "室內溫度",
+      "typeName": "temperature",
+      "name": "溫度",
       "tmpe": "0",
       "unit": "℃",
       "id": 3
@@ -31,38 +31,6 @@
       "tmpe": "0",
       "unit": "℃",
       "id": 4
-    },
-    {
-      "order": "4",
-      "typeName": "rainfall",
-      "name": "降雨量",
-      "tmpe": "0",
-      "unit": "mm",
-      "id": 5
-    },
-    {
-      "order": "5",
-      "typeName": "illumination",
-      "name": "光照度",
-      "tmpe": "0",
-      "unit": "lux",
-      "id": 6
-    },
-    {
-      "order": "7",
-      "typeName": "qweqwe",
-      "name": "光照",
-      "tmpe": "0",
-      "unit": "lux",
-      "id": 7
-    },
-    {
-      "order": "6",
-      "typeName": "in_temperature_TEST",
-      "name": "室內溫度T",
-      "tmpe": "0",
-      "unit": "℃",
-      "id": 8
     }
   ],
   "switch": [
@@ -118,9 +86,23 @@
     {
       "order": "7",
       "typeName": "燈",
-      "name": "二樓室外",
+      "name": "插座",
       "status": "0",
       "id": 8
+    },
+    {
+      "order": "8",
+      "typeName": "車庫",
+      "name": "一樓",
+      "status": "0",
+      "id": 9
+    },
+    {
+      "order": "9",
+      "typeName": "窗簾",
+      "name": "二樓",
+      "status": "0",
+      "id": 10
     }
   ],
   "auto": [
@@ -135,28 +117,30 @@
       "offOrder": "date",
       "offNorm": "18:00",
       "id": 2
+    },
+    {
+      "order": "3",
+      "description": "自動控制電扇",
+      "switchOrder": "7",
+      "onSymbol": ">",
+      "onOrder": "2",
+      "onNorm": "29",
+      "offSymbol": "<",
+      "offOrder": "2",
+      "offNorm": "30",
+      "id": 4
     }
   ],
   "camera": [
     {
       "order": "1",
-      "description": "E102",
+      "description": "攝影機一號",
       "ip": "140.126.20.183",
       "port": "8080",
-      "type": "video.cgi",
       "user": "admin",
       "pwd": "123456",
+      "type": "video.cgi",
       "id": 2
-    },
-    {
-      "order": "2",
-      "description": "E102 pc cam",
-      "ip": "140.126.20.183",
-      "port": "8081",
-      "user": "",
-      "pwd": "",
-      "type": "",
-      "id": 3
     }
   ]
 }

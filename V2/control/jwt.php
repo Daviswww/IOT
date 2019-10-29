@@ -1,6 +1,7 @@
 <?php
 require_once('../assets/vendor/autoload.php');
 require_once('../module/hash.php');
+session_start();
 use Lcobucci\JWT\Builder;
 use Lcobucci\JWT\Signer\Key;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
@@ -16,6 +17,9 @@ $token = (new Builder())->issuedBy('http://example.com') // Configures the issue
                         ->expiresAt($time + 3600) // Configures the expiration time of the token (exp claim)
                         ->withClaim('uid', 1) // Configures a new claim, called "uid"
                         ->getToken($signer, new Key($hashkey)); // Retrieves the generated token
+setcookie("token", $token, time() + (86400 * 30), "/");
+echo $token->getClaim('exp');
+//$_SESSION["token"] = $token;
 
 if($token->verify($signer, $hashkey))
 {
@@ -25,3 +29,8 @@ else
 {
     echo "2Hello World!";
 }
+?>
+
+<html>
+<a href="test.php"> test </a> 
+</html>

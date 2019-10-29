@@ -1,6 +1,8 @@
 <?php
-if($_COOKIE[$_COOKIE['pv']]!=$_COOKIE[$_COOKIE['pu']]){
-  header("Location: ../index.php?login-error");
+require_once('../assets/vendor/autoload.php');
+session_start();
+if( time() > $_SESSION['time'] || empty($_COOKIE['uid'])){
+  header("Location: ../index.php?login-time-out");
 }
 ?>
 

@@ -1,9 +1,10 @@
 <?php
-if($_COOKIE[$_COOKIE['pv']]!=$_COOKIE[$_COOKIE['pu']]){
-  header("Location: ../index.php?login-error");
+require_once('../assets/vendor/autoload.php');
+session_start();
+if( time() > $_SESSION['time'] || empty($_COOKIE['uid'])){
+  header("Location: ../index.php?login-time-out");
 }
 ?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,7 +20,7 @@ if($_COOKIE[$_COOKIE['pv']]!=$_COOKIE[$_COOKIE['pu']]){
   <body>
   	<nav class="nav-main">
   	  <ul>
-      <li><div id="sidebar" name="btn"></div></li>
+        <li><div id="sidebar" name="btn"></div></li>
         <li><a href="home.php">sensor </a></li><li>/<li>
         <li><a href="switch.php">switch</a></li><li>/<li>
         <li><a href="chart.php">chart</a></li><li>/<li>

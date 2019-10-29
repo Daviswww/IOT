@@ -1,0 +1,15 @@
+.circle_in_black{
+    width: 200px;
+    height:200px;
+    border-radius:999em;
+    background-color:black;
+    margin: 60px 2%;
+}
+
+.circle_in_black .tbox{
+    top:25%;
+    font-size: 60px;
+    text-align: center;
+    position: relative;
+    color: aliceblue;
+}

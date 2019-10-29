@@ -23,15 +23,14 @@ while(true)
         $time = 0;
         $auto = json_decode($json->get($autoUrl));
         if($now > strtotime($date)){
-            $path = $date . "csv";
             $get->outOfCsv(($path ."sensor/". $date . ".csv"), 'sensor');
             $get->outOfCsv(($path ."status/". $date . ".csv"), 'status');
             echo "Save csv done!\n";
             $date = date("Y-m-d",(time()+6*3600));
         }
     }
-    for($i = 0; $i < sizeof($auto); $i++){
-        try{
+    try{
+        for($i = 0; $i < sizeof($auto); $i++){
             //switch on
             if($auto[$i]->{'onOrder'} == "date"){
                 $sen = strtotime(date("H:i",(time()+6*3600)));
@@ -85,11 +84,11 @@ while(true)
             ($sen < $nor)){
                 $msg = "f" . $auto[$i]->{'switchOrder'};
                 $mqtt->publish($msg);
-            }    
-        }catch(Exception $err){
-            echo "GET 404 server error!";
-        }  
-    }
+            }   
+        }
+    }catch(Exception $err){
+        echo "GET 404 server error!";
+    }  
     $time+=1;
     echo "GET 200 AUTO #$time\n";
     sleep(1);

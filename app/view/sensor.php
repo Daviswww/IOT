@@ -35,9 +35,6 @@ if(empty($_COOKIE['uid'])){
         <a class="nav-link" href="sensor.php">SENSOR <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-          <a class="nav-link" href="speed.php">BOT <span class="sr-only">(current)</span></a>
-        </li>
-      <li class="nav-item active">
         <a class="nav-link" name="signout" href="../../V2/control/signApp-out.php">SIGN-OUT <span class="sr-only">(current)</span></a>
       </li>
     </ul>

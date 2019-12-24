@@ -9,3 +9,5 @@ $tb = 'status';
 $db->cleanDB($tb);
 */
 echo 'done!';
+$cfg = json_decode(file_get_contents("./../../config.json"));
+echo $cfg['host'];

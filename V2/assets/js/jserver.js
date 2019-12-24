@@ -1,4 +1,5 @@
-var host = "localhost";
+var j = $.getJSON({url:'./../../config.json', async:false});
+var host = j.responseJSON.host;
 $(function(){
     $('#delete').on('click',function(){
         document.getElementById('errmsg').style.color= "red";
@@ -400,11 +401,11 @@ $(function(){
             datatype: 'json',
             success:function(suc){
                 suc.forEach(function(sensors) {
-                    if(sensors.order===order && sensors.id!=id)
+                    if(sensors.order==order && sensors.id!=id)
                     {
                         go = false;
                     }
-                });
+                });                    
             },
             error:function(err){
                 console.log("get error!")

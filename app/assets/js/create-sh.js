@@ -1,4 +1,5 @@
-var host = "localhost";
+var j = $.getJSON({url:'./../../config.json', async:false});
+var host = j.responseJSON.host;
 $(function(){
     var status = Array();
     for(var i = 0; i < 20; i++)
@@ -7,8 +8,8 @@ $(function(){
     }
     $.ajax({         
         url: 'http://'+host+':3000/switch',
-        cache: false,
         dataType: 'json',
+        async:false,
         type:'GET',
         success: function(res) {
             res.forEach(function(switchs) {
@@ -23,6 +24,7 @@ $(function(){
                     "</div>"+
                   "</div>");
             });
+            console.log('server sec!');
         },
         error: function(xhr) {
             console.log('server fail!');

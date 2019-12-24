@@ -4,7 +4,7 @@ include '../module/jsonServer.php';
 $json = new jsonServer();
 $mqtt = new Mqttget();
 $url = 'http://localhost/IOT/V2/assets/api/status.php';
-
+$topic = 'control';
 try
 {
     if(!empty($_POST['msg']))
@@ -16,7 +16,7 @@ try
         {
             if(!$status)
             {
-                $mqtt->publish($msg);
+                $mqtt->publish($topic, $msg);
                 echo "ON success!";
             }
         }
@@ -24,7 +24,7 @@ try
         {
             if($status)
             {
-                $mqtt->publish($msg);
+                $mqtt->publish($topic, $msg);
                 echo "OFF success!";
             }
         }

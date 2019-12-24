@@ -1,4 +1,5 @@
-var host = "localhost";
+var j = $.getJSON({url:'./../../config.json', async:false});
+var host = j.responseJSON.host;
 $(function(){
     $.ajax({
         type : "GET",

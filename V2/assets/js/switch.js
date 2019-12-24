@@ -1,9 +1,10 @@
-var host = "localhost";
+var j = $.getJSON({url:'./../../config.json', async:false});
+var host = j.responseJSON.host;
 $(function(){
     setInterval(function(){ showData(); } ,1000);
     $.ajax({         
         url: 'http://'+host+':3000/switch',
-        cache: false,
+        cache: true,
         dataType: 'json',
         type:'GET',
         success: function(res) {

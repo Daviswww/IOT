@@ -1,4 +1,5 @@
-var host = "localhost";
+var j = $.getJSON({url:'./../../config.json', async:false});
+var host = j.responseJSON.host;
 $(function(){
     $.ajax({         
         url: 'http://'+host+':3000/camera',

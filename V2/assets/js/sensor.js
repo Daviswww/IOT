@@ -1,9 +1,11 @@
-var host = "localhost";
+var j = $.getJSON({url:'./../../config.json', async:false});
+var host = j.responseJSON.host;
+console.log(host);
 $(function(){
     setInterval(function(){ showData(); } ,1000);
     $.ajax({         
         url: 'http://'+host+':3000/sensor',
-        cache: false,
+        cache: true,
         dataType: 'json',
         type:'GET',
         success: function(res) {

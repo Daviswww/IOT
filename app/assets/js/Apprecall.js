@@ -1,4 +1,5 @@
-var host = "localhost";
+var j = $.getJSON({url:'./../../config.json', async:false});
+var host = j.responseJSON.host;
 var talk, sa;
 $(function(){
     const btn = document.querySelector('#msg-talk');

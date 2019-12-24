@@ -1,4 +1,5 @@
-var host = "localhost";
+var j = $.getJSON({url:'./../../config.json', async:false});
+var host = j.responseJSON.host;
 $(function(){
     $.getJSON('../assets/api/db.json', function(data) {         
         data['sensor'].forEach(function(sensors) {

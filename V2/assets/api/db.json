@@ -31,35 +31,43 @@
       "tmpe": "0",
       "unit": "℃",
       "id": 4
+    },
+    {
+      "order": "4",
+      "typeName": "123",
+      "name": "123",
+      "tmpe": "0",
+      "unit": "$",
+      "id": 5
     }
   ],
   "switch": [
     {
       "order": "1",
       "typeName": "燈",
-      "name": "客廳",
+      "name": "廚房",
       "status": "0",
       "id": 1
     },
     {
       "order": "2",
       "typeName": "燈",
-      "name": "廚房",
-      "status": 0,
+      "name": "客廳",
+      "status": "0",
       "id": 2
     },
     {
       "order": "3",
       "typeName": "燈",
-      "name": "車庫",
-      "status": 0,
+      "name": "走廊",
+      "status": "0",
       "id": 3
     },
     {
       "order": "4",
       "typeName": "燈",
-      "name": "走廊",
-      "status": 0,
+      "name": "車庫",
+      "status": "0",
       "id": 4
     },
     {
@@ -72,14 +80,14 @@
     {
       "order": "5",
       "typeName": "燈",
-      "name": "二樓",
+      "name": "客房",
       "status": "0",
       "id": 6
     },
     {
       "order": "6",
       "typeName": "燈",
-      "name": "二樓大廳",
+      "name": "臥室",
       "status": "0",
       "id": 7
     },
@@ -103,31 +111,26 @@
       "name": "二樓",
       "status": "0",
       "id": 10
+    },
+    {
+      "order": "10",
+      "typeName": "燈",
+      "name": "花園",
+      "status": "0",
+      "id": 11
     }
   ],
   "auto": [
     {
       "order": "1",
       "description": "走廊燈",
-      "switchOrder": "4",
+      "switchOrder": "3",
       "onSymbol": "=",
       "onOrder": "date",
-      "onNorm": "16:36",
+      "onNorm": "17:37",
       "offSymbol": "=",
       "offOrder": "date",
-      "offNorm": "18:00",
-      "id": 2
-    },
-    {
-      "order": "3",
-      "description": "自動控制電扇",
-      "switchOrder": "7",
-      "onSymbol": ">",
-      "onOrder": "2",
-      "onNorm": "29",
-      "offSymbol": "<",
-      "offOrder": "2",
-      "offNorm": "30",
+      "offNorm": "17:38",
       "id": 4
     }
   ],
@@ -139,7 +142,7 @@
       "port": "8080",
       "user": "admin",
       "pwd": "123456",
-      "type": "video.cgi",
+      "type": "videostream.cgi",
       "id": 2
     }
   ]

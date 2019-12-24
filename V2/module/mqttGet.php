@@ -4,12 +4,12 @@ include '../includes/mqtt.inc.php';
 
 class Mqttget extends Mqtt
 {
-    public function publish($msg)
+    public function publish($topic, $msg)
     {
         $mqtt = $this->setmqtt();
         if ($mqtt->connect(true, NULL, $this->username, $this->password)) {
             //設定傳送對象
-            $mqtt->publish("control", $msg, 0);
+            $mqtt->publish($topic, $msg, 0);
             $mqtt->close();
         } else {
             echo "Time out!\n";

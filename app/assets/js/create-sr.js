@@ -1,4 +1,5 @@
-var host = "localhost";
+var j = $.getJSON({url:'./../../config.json', async:false});
+var host = j.responseJSON.host;
 $(function(){
     $.ajax({         
         url: 'http://'+host+':3000/sensor',
@@ -30,11 +31,13 @@ $(function(){
                 if(data['s'+i] == null){
                     break;
                 }
-                $("#s"+i).html(data['s'+i]);
+                
                 if(data['s'+i] == -404){
+                    $("#s"+i).html("X");
                     document.getElementById('c'+i).style.background = "rgb(219, 70, 70)";
                 }
                 else{
+                    $("#s"+i).html(data['s'+i]);
                     document.getElementById('c'+i).style.background = "#4eac78";
                 }
             };

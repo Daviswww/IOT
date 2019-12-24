@@ -1,36 +1,23 @@
-$(function(){
-    setInterval(function(){ update(); } ,1000);
-    function update(){
-        $.ajax({
-            url:'../module/dbLast.php',
-            method:'get',
-            async : true,
-            datatype: 'json',
-            success:function(res){
-                console.log(res['s0']);
-            },
-            error:function(err){
-                console.log('publish fail!');
-            }
+//var obj = JSON.parse('./config.json');;
+
+
+/*
+var dict = {};
+$.getJSON('./config.json', function(data)
+{
+    $.each( data, function( key, val ) {
+        dict[key] = val;
         });
-
-    };
-
-    /*
-    $.get("../module/dbLast.php", function(data){
-        console.log(data['illumination']);
-    });
-    $.ajax({
-        url:'../module/dbLast.php',
-        method:'get',
-        async : false,
-        datatype: 'json',
-        success:function(res){
-          console.log('hey');
-          document.getElementById('inside').innerHTML = res;
-        },
-        error:function(err){
-            console.log('publish fail!');
-        }
-    });*/
+    console.log(dict);
 });
+
+console.log(dict);
+
+
+var j = $.getJSON({url:'./../../../config.json', async:false});
+var host = j.responseJSON.host;
+console.log(host);
+*/
+var cfg = require("./../../config.json");
+var host = cfg.host;
+console.log(host);
